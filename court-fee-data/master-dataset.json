@@ -1,0 +1,506 @@
+{
+  "datasetName": "Indian State-Wise Court Fee Slabs — Master Dataset",
+  "datasetVersion": "2.0.0",
+  "generatedAt": "2026-05-26T19:30:00.000Z",
+  "legalBasis": "Court Fees Act 1870 and state-specific adaptations",
+  "totalStates": 20,
+  "totalCaseTypes": 18,
+  "states": {
+    "delhi": {
+      "name": "Delhi",
+      "code": "DL",
+      "act": "Court Fees Act (as applicable to Delhi), 1870",
+      "calcType": "statutory_table",
+      "minFee": null,
+      "maxFee": null,
+      "feeCapApplies": false,
+      "notes": "Original 1870 Act Schedule I statutory fee table. 2012 Delhi Amendment struck down. No max cap.",
+      "formulaDescription": "Statutory table lookup: direct range-based fee lookup from Schedule I. No computation, no percentages.",
+      "effectiveRateAt": {
+        "5000": 150,
+        "10000": 400,
+        "25000": 900,
+        "50000": 1700,
+        "100000": 3562,
+        "227073": 4588.80,
+        "500000": 6500,
+        "1000000": 9000,
+        "10000000": 12500
+      },
+      "statutoryTable": [
+        { "from": 0, "to": 5, "fee": 0.50 },
+        { "from": 5, "to": 10, "fee": 0.50 },
+        { "from": 10, "to": 15, "fee": 1.00 },
+        { "from": 15, "to": 20, "fee": 1.50 },
+        { "from": 20, "to": 25, "fee": 2.00 },
+        { "from": 25, "to": 50, "fee": 5.00 },
+        { "from": 50, "to": 100, "fee": 7.50 },
+        { "from": 100, "to": 200, "fee": 10.00 },
+        { "from": 200, "to": 300, "fee": 15.00 },
+        { "from": 300, "to": 400, "fee": 20.00 },
+        { "from": 400, "to": 500, "fee": 25.00 },
+        { "from": 500, "to": 600, "fee": 30.00 },
+        { "from": 600, "to": 700, "fee": 35.00 },
+        { "from": 700, "to": 800, "fee": 40.00 },
+        { "from": 800, "to": 900, "fee": 45.00 },
+        { "from": 900, "to": 1000, "fee": 50.00 },
+        { "from": 1000, "to": 2000, "fee": 75.00 },
+        { "from": 2000, "to": 3000, "fee": 100.00 },
+        { "from": 3000, "to": 4000, "fee": 125.00 },
+        { "from": 4000, "to": 5000, "fee": 150.00 },
+        { "from": 5000, "to": 6000, "fee": 200.00 },
+        { "from": 6000, "to": 7000, "fee": 250.00 },
+        { "from": 7000, "to": 8000, "fee": 300.00 },
+        { "from": 8000, "to": 9000, "fee": 350.00 },
+        { "from": 9000, "to": 10000, "fee": 400.00 },
+        { "from": 10000, "to": 15000, "fee": 500.00 },
+        { "from": 15000, "to": 20000, "fee": 700.00 },
+        { "from": 20000, "to": 25000, "fee": 900.00 },
+        { "from": 25000, "to": 30000, "fee": 1100.00 },
+        { "from": 30000, "to": 40000, "fee": 1400.00 },
+        { "from": 40000, "to": 50000, "fee": 1700.00 },
+        { "from": 50000, "to": 60000, "fee": 2100.00 },
+        { "from": 60000, "to": 70000, "fee": 2500.00 },
+        { "from": 70000, "to": 80000, "fee": 2900.00 },
+        { "from": 80000, "to": 90000, "fee": 3300.00 },
+        { "from": 90000, "to": 100000, "fee": 3562.00 },
+        { "from": 100001, "to": 300000, "fee": 4588.80 },
+        { "from": 300001, "to": 500000, "fee": 6500.00 },
+        { "from": 500001, "to": 1000000, "fee": 9000.00 },
+        { "from": 1000001, "to": 999999999, "fee": 12500.00 }
+      ],
+      "fixedFees": { "divorce": 150, "bail": 100, "writ": 500, "arbitration": 650, "certificate": "2.5%" },
+      "commercialRules": { "threshold": 300000, "sameAsRegular": true }
+    },
+    "maharashtra": {
+      "name": "Maharashtra",
+      "code": "MH",
+      "act": "Maharashtra Court Fees Act, 1959",
+      "calcType": "slab",
+      "minFee": 50,
+      "maxFee": 150000,
+      "feeCapApplies": true,
+      "formulaDescription": "First ₹5,000 at flat ₹50, then progressive percentage slabs",
+      "effectiveRateAt": {
+        "100000": 4050,
+        "500000": 18050,
+        "1000000": 33050
+      },
+      "slabs": [
+        { "from": 0, "to": 5000, "rate": 0, "fixed": 50, "label": "Flat ₹50 up to ₹5,000", "maxPortionFee": 50 },
+        { "from": 5000, "to": 25000, "rate": 0.05, "fixed": 0, "label": "5% on ₹5,001 – ₹25,000", "maxPortionFee": 1000 },
+        { "from": 25000, "to": 50000, "rate": 0.04, "fixed": 0, "label": "4% on ₹25,001 – ₹50,000", "maxPortionFee": 1000 },
+        { "from": 50000, "to": 500000, "rate": 0.03, "fixed": 0, "label": "3% on ₹50,001 – ₹5,00,000", "maxPortionFee": 13500 },
+        { "from": 500000, "to": null, "rate": 0.02, "fixed": 0, "label": "2% above ₹5,00,000", "maxPortionFee": null }
+      ],
+      "fixedFees": { "divorce": 150, "bail": 100, "writ": 500, "arbitration": 650, "certificate": "2.5%" },
+      "commercialRules": { "threshold": 300000, "sameAsRegular": true }
+    },
+    "karnataka": {
+      "name": "Karnataka",
+      "code": "KA",
+      "act": "Karnataka Court Fees and Suits Valuation Act, 1958",
+      "calcType": "slab",
+      "minFee": 100,
+      "maxFee": 150000,
+      "feeCapApplies": true,
+      "formulaDescription": "Progressive slab with lower rates for higher values (4%/3%/2%/1.5%)",
+      "effectiveRateAt": {
+        "100000": 3500,
+        "500000": 13500,
+        "1000000": 23500
+      },
+      "slabs": [
+        { "from": 0, "to": 50000, "rate": 0.04, "fixed": 0, "label": "4% on first ₹50,000 (min ₹100)", "maxPortionFee": 2000 },
+        { "from": 50000, "to": 200000, "rate": 0.03, "fixed": 0, "label": "3% on ₹50,001 – ₹2,00,000", "maxPortionFee": 4500 },
+        { "from": 200000, "to": 500000, "rate": 0.02, "fixed": 0, "label": "2% on ₹2,00,001 – ₹5,00,000", "maxPortionFee": 6000 },
+        { "from": 500000, "to": null, "rate": 0.015, "fixed": 0, "label": "1.5% above ₹5,00,000", "maxPortionFee": null }
+      ],
+      "fixedFees": { "divorce": 150, "bail": 100, "writ": 500, "arbitration": 650, "certificate": "2.5%" },
+      "commercialRules": { "threshold": 300000, "sameAsRegular": true }
+    },
+    "tamilnadu": {
+      "name": "Tamil Nadu",
+      "code": "TN",
+      "act": "Tamil Nadu Court Fees and Suits Valuation Act, 1955",
+      "calcType": "slab",
+      "minFee": 50,
+      "maxFee": 100000,
+      "feeCapApplies": true,
+      "formulaDescription": "Standard progressive slab (5%/5%/4%/3%/2%)",
+      "effectiveRateAt": {
+        "100000": 4350,
+        "500000": 20500,
+        "1000000": 35500
+      },
+      "slabs": [
+        { "from": 0, "to": 5000, "rate": 0.05, "fixed": 0, "label": "5% on first ₹5,000 (min ₹50)", "maxPortionFee": 250 },
+        { "from": 5000, "to": 25000, "rate": 0.05, "fixed": 0, "label": "5% on ₹5,001 – ₹25,000", "maxPortionFee": 1000 },
+        { "from": 25000, "to": 100000, "rate": 0.04, "fixed": 0, "label": "4% on ₹25,001 – ₹1,00,000", "maxPortionFee": 3000 },
+        { "from": 100000, "to": 500000, "rate": 0.03, "fixed": 0, "label": "3% on ₹1,00,001 – ₹5,00,000", "maxPortionFee": 12000 },
+        { "from": 500000, "to": null, "rate": 0.02, "fixed": 0, "label": "2% above ₹5,00,000", "maxPortionFee": null }
+      ],
+      "fixedFees": { "divorce": 150, "bail": 100, "writ": 500, "arbitration": 650, "certificate": "2.5%" },
+      "commercialRules": { "threshold": 300000, "sameAsRegular": true }
+    },
+    "uttarpradesh": {
+      "name": "Uttar Pradesh",
+      "code": "UP",
+      "act": "Uttar Pradesh Court Fees Act (as amended), 1870",
+      "calcType": "total_pct",
+      "minFee": 25,
+      "maxFee": 125000,
+      "feeCapApplies": true,
+      "formulaDescription": "Total percentage: single rate applied to entire claim value based on bracket",
+      "effectiveRateAt": {
+        "100000": 6000,
+        "500000": 35000,
+        "1000000": 75000
+      },
+      "slabs": [
+        { "from": 0, "to": 2500, "rate": 0, "fixed": 25, "label": "Flat ₹25 up to ₹2,500", "maxPortionFee": 25 },
+        { "from": 2500, "to": 25000, "rate": 0.05, "fixed": 0, "label": "5% of total claim (₹2,501 – ₹25,000)", "maxPortionFee": null },
+        { "from": 25001, "to": 100000, "rate": 0.06, "fixed": 0, "label": "6% of total claim (₹25,001 – ₹1,00,000)", "maxPortionFee": null },
+        { "from": 100001, "to": 500000, "rate": 0.07, "fixed": 0, "label": "7% of total claim (₹1,00,001 – ₹5,00,000)", "maxPortionFee": null },
+        { "from": 500001, "to": null, "rate": 0.075, "fixed": 0, "label": "7.5% of total claim (above ₹5,00,001)", "maxPortionFee": null }
+      ],
+      "fixedFees": { "divorce": 150, "bail": 100, "writ": 500, "arbitration": 650, "certificate": "2.5%" },
+      "commercialRules": { "threshold": 300000, "sameAsRegular": true }
+    },
+    "kerala": {
+      "name": "Kerala",
+      "code": "KL",
+      "act": "Kerala Court Fees and Suits Valuation Act, 1959",
+      "calcType": "slab",
+      "minFee": 50,
+      "maxFee": 100000,
+      "feeCapApplies": true,
+      "effectiveRateAt": { "100000": 4500, "500000": 21000, "1000000": 36000 },
+      "slabs": [
+        { "from": 0, "to": 10000, "rate": 0.05, "label": "5% on first ₹10,000" },
+        { "from": 10000, "to": 50000, "rate": 0.05, "label": "5% on ₹10,001 – ₹50,000" },
+        { "from": 50000, "to": 200000, "rate": 0.04, "label": "4% on ₹50,001 – ₹2,00,000" },
+        { "from": 200000, "to": 500000, "rate": 0.03, "label": "3% on ₹2,00,001 – ₹5,00,000" },
+        { "from": 500000, "to": null, "rate": 0.02, "label": "2% above ₹5,00,000" }
+      ],
+      "fixedFees": { "divorce": 150, "bail": 100, "writ": 500, "arbitration": 650, "certificate": "2.5%" }
+    },
+    "gujarat": {
+      "name": "Gujarat",
+      "code": "GJ",
+      "act": "Gujarat Court Fees Act, 2004",
+      "calcType": "slab",
+      "minFee": 50,
+      "maxFee": 100000,
+      "feeCapApplies": true,
+      "effectiveRateAt": { "100000": 4200, "500000": 21000, "1000000": 36000 },
+      "slabs": [
+        { "from": 0, "to": 20000, "rate": 0.05, "label": "5% on first ₹20,000" },
+        { "from": 20000, "to": 100000, "rate": 0.04, "label": "4% on ₹20,001 – ₹1,00,000" },
+        { "from": 100000, "to": 500000, "rate": 0.03, "label": "3% on ₹1,00,001 – ₹5,00,000" },
+        { "from": 500000, "to": null, "rate": 0.02, "label": "2% above ₹5,00,000" }
+      ],
+      "fixedFees": { "divorce": 150, "bail": 100, "writ": 500, "arbitration": 650, "certificate": "2.5%" }
+    },
+    "rajasthan": {
+      "name": "Rajasthan",
+      "code": "RJ",
+      "act": "Rajasthan Court Fees and Suits Valuation Act, 1961",
+      "calcType": "slab",
+      "minFee": 100,
+      "maxFee": 150000,
+      "feeCapApplies": true,
+      "effectiveRateAt": { "100000": 3500, "500000": 13500, "1000000": 23500 },
+      "slabs": [
+        { "from": 0, "to": 50000, "rate": 0.04, "label": "4% on first ₹50,000 (min ₹100)" },
+        { "from": 50000, "to": 200000, "rate": 0.03, "label": "3% on ₹50,001 – ₹2,00,000" },
+        { "from": 200000, "to": 500000, "rate": 0.02, "label": "2% on ₹2,00,001 – ₹5,00,000" },
+        { "from": 500000, "to": null, "rate": 0.015, "label": "1.5% above ₹5,00,000" }
+      ],
+      "fixedFees": { "divorce": 150, "bail": 100, "writ": 500, "arbitration": 650, "certificate": "2.5%" }
+    },
+    "haryana": {
+      "name": "Haryana",
+      "code": "HR",
+      "act": "Court Fees Act (Haryana Adaptation), 1870",
+      "calcType": "slab",
+      "minFee": 50,
+      "maxFee": 100000,
+      "feeCapApplies": true,
+      "effectiveRateAt": { "100000": 4400, "500000": 20500, "1000000": 35500 },
+      "slabs": [
+        { "from": 0, "to": 10000, "rate": 0.04, "label": "4% on first ₹10,000" },
+        { "from": 10000, "to": 50000, "rate": 0.04, "label": "4% on ₹10,001 – ₹50,000" },
+        { "from": 50000, "to": 200000, "rate": 0.03, "label": "3% on ₹50,001 – ₹2,00,000" },
+        { "from": 200000, "to": 500000, "rate": 0.025, "label": "2.5% on ₹2,00,001 – ₹5,00,000" },
+        { "from": 500000, "to": null, "rate": 0.02, "label": "2% above ₹5,00,000" }
+      ],
+      "fixedFees": { "divorce": 150, "bail": 100, "writ": 500, "arbitration": 650, "certificate": "2.5%" }
+    },
+    "punjab": {
+      "name": "Punjab",
+      "code": "PB",
+      "act": "Court Fees Act (Punjab Adaptation), 1870",
+      "calcType": "slab",
+      "minFee": 50,
+      "maxFee": 100000,
+      "feeCapApplies": true,
+      "effectiveRateAt": { "100000": 4400, "500000": 20500, "1000000": 35500 },
+      "slabs": [
+        { "from": 0, "to": 10000, "rate": 0.04, "label": "4% on first ₹10,000" },
+        { "from": 10000, "to": 50000, "rate": 0.04, "label": "4% on ₹10,001 – ₹50,000" },
+        { "from": 50000, "to": 200000, "rate": 0.03, "label": "3% on ₹50,001 – ₹2,00,000" },
+        { "from": 200000, "to": 500000, "rate": 0.025, "label": "2.5% on ₹2,00,001 – ₹5,00,000" },
+        { "from": 500000, "to": null, "rate": 0.02, "label": "2% above ₹5,00,000" }
+      ],
+      "fixedFees": { "divorce": 150, "bail": 100, "writ": 500, "arbitration": 650, "certificate": "2.5%" }
+    },
+    "westbengal": {
+      "name": "West Bengal",
+      "code": "WB",
+      "act": "West Bengal Court Fees Act (as amended), 1870",
+      "calcType": "slab",
+      "minFee": 50,
+      "maxFee": 150000,
+      "feeCapApplies": true,
+      "effectiveRateAt": { "100000": 4200, "500000": 18000, "1000000": 33000 },
+      "slabs": [
+        { "from": 0, "to": 20000, "rate": 0.05, "label": "5% on first ₹20,000" },
+        { "from": 20000, "to": 100000, "rate": 0.04, "label": "4% on ₹20,001 – ₹1,00,000" },
+        { "from": 100000, "to": 300000, "rate": 0.03, "label": "3% on ₹1,00,001 – ₹3,00,000" },
+        { "from": 300000, "to": null, "rate": 0.02, "label": "2% above ₹3,00,000" }
+      ],
+      "fixedFees": { "divorce": 150, "bail": 100, "writ": 500, "arbitration": 650, "certificate": "2.5%" }
+    },
+    "telangana": {
+      "name": "Telangana",
+      "code": "TS",
+      "act": "Telangana Court Fees and Suits Valuation Act, 1956",
+      "calcType": "slab",
+      "minFee": 50,
+      "maxFee": 100000,
+      "feeCapApplies": true,
+      "effectiveRateAt": { "100000": 4350, "500000": 20500, "1000000": 35500 },
+      "slabs": [
+        { "from": 0, "to": 5000, "rate": 0.05, "label": "5% on first ₹5,000" },
+        { "from": 5000, "to": 25000, "rate": 0.05, "label": "5% on ₹5,001 – ₹25,000" },
+        { "from": 25000, "to": 100000, "rate": 0.04, "label": "4% on ₹25,001 – ₹1,00,000" },
+        { "from": 100000, "to": 500000, "rate": 0.03, "label": "3% on ₹1,00,001 – ₹5,00,000" },
+        { "from": 500000, "to": null, "rate": 0.02, "label": "2% above ₹5,00,000" }
+      ],
+      "fixedFees": { "divorce": 150, "bail": 100, "writ": 500, "arbitration": 650, "certificate": "2.5%" }
+    },
+    "andhrapradesh": {
+      "name": "Andhra Pradesh",
+      "code": "AP",
+      "act": "Andhra Pradesh Court Fees and Suits Valuation Act, 1956",
+      "calcType": "slab",
+      "minFee": 50,
+      "maxFee": 100000,
+      "feeCapApplies": true,
+      "effectiveRateAt": { "100000": 4350, "500000": 20500, "1000000": 35500 },
+      "slabs": [
+        { "from": 0, "to": 5000, "rate": 0.05, "label": "5% on first ₹5,000" },
+        { "from": 5000, "to": 25000, "rate": 0.05, "label": "5% on ₹5,001 – ₹25,000" },
+        { "from": 25000, "to": 100000, "rate": 0.04, "label": "4% on ₹25,001 – ₹1,00,000" },
+        { "from": 100000, "to": 500000, "rate": 0.03, "label": "3% on ₹1,00,001 – ₹5,00,000" },
+        { "from": 500000, "to": null, "rate": 0.02, "label": "2% above ₹5,00,000" }
+      ],
+      "fixedFees": { "divorce": 150, "bail": 100, "writ": 500, "arbitration": 650, "certificate": "2.5%" }
+    },
+    "madhyapradesh": {
+      "name": "Madhya Pradesh",
+      "code": "MP",
+      "act": "Court Fees Act (MP Adaptation), 1870",
+      "calcType": "slab",
+      "minFee": 50,
+      "maxFee": 100000,
+      "feeCapApplies": true,
+      "effectiveRateAt": { "100000": 4350, "500000": 20500, "1000000": 35500 },
+      "slabs": [
+        { "from": 0, "to": 5000, "rate": 0.05, "label": "5% on first ₹5,000" },
+        { "from": 5000, "to": 25000, "rate": 0.05, "label": "5% on ₹5,001 – ₹25,000" },
+        { "from": 25000, "to": 100000, "rate": 0.04, "label": "4% on ₹25,001 – ₹1,00,000" },
+        { "from": 100000, "to": 500000, "rate": 0.03, "label": "3% on ₹1,00,001 – ₹5,00,000" },
+        { "from": 500000, "to": null, "rate": 0.02, "label": "2% above ₹5,00,000" }
+      ],
+      "fixedFees": { "divorce": 150, "bail": 100, "writ": 500, "arbitration": 650, "certificate": "2.5%" }
+    },
+    "bihar": {
+      "name": "Bihar",
+      "code": "BR",
+      "act": "Court Fees Act (Bihar Adaptation), 1870",
+      "calcType": "slab",
+      "minFee": 50,
+      "maxFee": 100000,
+      "feeCapApplies": true,
+      "effectiveRateAt": { "100000": 4350, "500000": 18500, "1000000": 33500 },
+      "slabs": [
+        { "from": 0, "to": 5000, "rate": 0, "fixed": 50, "label": "Flat ₹50 up to ₹5,000" },
+        { "from": 5000, "to": 100000, "rate": 0.04, "label": "4% on ₹5,001 – ₹1,00,000" },
+        { "from": 100000, "to": 300000, "rate": 0.03, "label": "3% on ₹1,00,001 – ₹3,00,000" },
+        { "from": 300000, "to": null, "rate": 0.02, "label": "2% above ₹3,00,000" }
+      ],
+      "fixedFees": { "divorce": 150, "bail": 100, "writ": 500, "arbitration": 650, "certificate": "2.5%" }
+    },
+    "odisha": {
+      "name": "Odisha",
+      "code": "OD",
+      "act": "Court Fees Act (Odisha Adaptation), 1870",
+      "calcType": "slab",
+      "minFee": 50,
+      "maxFee": 100000,
+      "feeCapApplies": true,
+      "effectiveRateAt": { "100000": 4350, "500000": 20500, "1000000": 35500 },
+      "slabs": [
+        { "from": 0, "to": 5000, "rate": 0.05, "label": "5% on first ₹5,000" },
+        { "from": 5000, "to": 25000, "rate": 0.05, "label": "5% on ₹5,001 – ₹25,000" },
+        { "from": 25000, "to": 100000, "rate": 0.04, "label": "4% on ₹25,001 – ₹1,00,000" },
+        { "from": 100000, "to": 500000, "rate": 0.03, "label": "3% on ₹1,00,001 – ₹5,00,000" },
+        { "from": 500000, "to": null, "rate": 0.02, "label": "2% above ₹5,00,000" }
+      ],
+      "fixedFees": { "divorce": 150, "bail": 100, "writ": 500, "arbitration": 650, "certificate": "2.5%" }
+    },
+    "assam": {
+      "name": "Assam",
+      "code": "AS",
+      "act": "Court Fees Act (Assam Adaptation), 1870",
+      "calcType": "slab",
+      "minFee": 50,
+      "maxFee": 100000,
+      "feeCapApplies": true,
+      "effectiveRateAt": { "100000": 4350, "500000": 20500, "1000000": 35500 },
+      "slabs": [
+        { "from": 0, "to": 5000, "rate": 0.05, "label": "5% on first ₹5,000" },
+        { "from": 5000, "to": 25000, "rate": 0.05, "label": "5% on ₹5,001 – ₹25,000" },
+        { "from": 25000, "to": 100000, "rate": 0.04, "label": "4% on ₹25,001 – ₹1,00,000" },
+        { "from": 100000, "to": 500000, "rate": 0.03, "label": "3% on ₹1,00,001 – ₹5,00,000" },
+        { "from": 500000, "to": null, "rate": 0.02, "label": "2% above ₹5,00,000" }
+      ],
+      "fixedFees": { "divorce": 150, "bail": 100, "writ": 500, "arbitration": 650, "certificate": "2.5%" }
+    },
+    "jharkhand": {
+      "name": "Jharkhand",
+      "code": "JH",
+      "act": "Court Fees Act (Jharkhand Adaptation), 1870",
+      "calcType": "slab",
+      "minFee": 50,
+      "maxFee": 100000,
+      "feeCapApplies": true,
+      "effectiveRateAt": { "100000": 4000, "500000": 18000, "1000000": 33000 },
+      "slabs": [
+        { "from": 0, "to": 5000, "rate": 0.04, "label": "4% on first ₹5,000" },
+        { "from": 5000, "to": 100000, "rate": 0.04, "label": "4% on ₹5,001 – ₹1,00,000" },
+        { "from": 100000, "to": 300000, "rate": 0.03, "label": "3% on ₹1,00,001 – ₹3,00,000" },
+        { "from": 300000, "to": null, "rate": 0.02, "label": "2% above ₹3,00,000" }
+      ],
+      "fixedFees": { "divorce": 150, "bail": 100, "writ": 500, "arbitration": 650, "certificate": "2.5%" }
+    },
+    "chhattisgarh": {
+      "name": "Chhattisgarh",
+      "code": "CG",
+      "act": "Court Fees Act (Chhattisgarh Adaptation), 1870",
+      "calcType": "slab",
+      "minFee": 50,
+      "maxFee": 100000,
+      "feeCapApplies": true,
+      "effectiveRateAt": { "100000": 4350, "500000": 20500, "1000000": 35500 },
+      "slabs": [
+        { "from": 0, "to": 5000, "rate": 0.05, "label": "5% on first ₹5,000" },
+        { "from": 5000, "to": 25000, "rate": 0.05, "label": "5% on ₹5,001 – ₹25,000" },
+        { "from": 25000, "to": 100000, "rate": 0.04, "label": "4% on ₹25,001 – ₹1,00,000" },
+        { "from": 100000, "to": 500000, "rate": 0.03, "label": "3% on ₹1,00,001 – ₹5,00,000" },
+        { "from": 500000, "to": null, "rate": 0.02, "label": "2% above ₹5,00,000" }
+      ],
+      "fixedFees": { "divorce": 150, "bail": 100, "writ": 500, "arbitration": 650, "certificate": "2.5%" }
+    },
+    "goa": {
+      "name": "Goa",
+      "code": "GA",
+      "act": "Goa Court Fees Act, 1970",
+      "calcType": "slab",
+      "minFee": 50,
+      "maxFee": 100000,
+      "feeCapApplies": true,
+      "effectiveRateAt": { "100000": 4350, "500000": 20500, "1000000": 35500 },
+      "slabs": [
+        { "from": 0, "to": 5000, "rate": 0.05, "label": "5% on first ₹5,000" },
+        { "from": 5000, "to": 25000, "rate": 0.05, "label": "5% on ₹5,001 – ₹25,000" },
+        { "from": 25000, "to": 100000, "rate": 0.04, "label": "4% on ₹25,001 – ₹1,00,000" },
+        { "from": 100000, "to": 500000, "rate": 0.03, "label": "3% on ₹1,00,001 – ₹5,00,000" },
+        { "from": 500000, "to": null, "rate": 0.02, "label": "2% above ₹5,00,000" }
+      ],
+      "fixedFees": { "divorce": 150, "bail": 100, "writ": 500, "arbitration": 650, "certificate": "2.5%" }
+    }
+  },
+  "caseTypes": {
+    "money_recovery": { "name": "Money Recovery Suit", "category": "civil", "feeType": "slab", "valuationMethod": "Claim amount", "slabApplicable": true },
+    "commercial": { "name": "Commercial Suit", "category": "commercial", "feeType": "slab", "valuationMethod": "Specified value (principal+interest+damages+penalties)", "slabApplicable": true },
+    "divorce": { "name": "Divorce Petition", "category": "family", "feeType": "fixed", "valuationMethod": "Fixed fee", "slabApplicable": false, "defaultFee": 150 },
+    "bail": { "name": "Bail Application", "category": "criminal", "feeType": "fixed", "valuationMethod": "Fixed fee", "slabApplicable": false, "defaultFee": 100 },
+    "writ": { "name": "Writ Petition", "category": "constitutional", "feeType": "fixed", "valuationMethod": "Fixed fee", "slabApplicable": false, "defaultFee": 500 },
+    "partition": { "name": "Partition Suit", "category": "civil", "feeType": "slab", "valuationMethod": "Plaintiff's share value (total_market_value × share_ratio)", "slabApplicable": true },
+    "specific_performance": { "name": "Specific Performance", "category": "civil", "feeType": "slab", "valuationMethod": "Agreement/consideration value", "slabApplicable": true },
+    "declaration": { "name": "Declaration Suit", "category": "civil", "feeType": "slab", "valuationMethod": "Market value (plaintiff's self-assessment)", "slabApplicable": true },
+    "injunction": { "name": "Injunction Suit", "category": "civil", "feeType": "slab", "valuationMethod": "Relief value (plaintiff's estimate)", "slabApplicable": true },
+    "possession": { "name": "Possession Suit", "category": "civil", "feeType": "slab", "valuationMethod": "Market value of property", "slabApplicable": true },
+    "arbitration": { "name": "Arbitration Petition", "category": "arbitration", "feeType": "fixed", "valuationMethod": "Fixed fee", "slabApplicable": false, "defaultFee": 650 },
+    "commercial_appeal": { "name": "Commercial Appeal", "category": "commercial", "feeType": "slab", "valuationMethod": "Appeal value (same as original suit)", "slabApplicable": true },
+    "execution": { "name": "Execution Petition", "category": "civil", "feeType": "slab", "valuationMethod": "Decree amount", "slabApplicable": true },
+    "probate": { "name": "Probate Petition", "category": "succession", "feeType": "percentage", "valuationMethod": "2.5% of estate value", "slabApplicable": false, "defaultRate": 2.5 },
+    "succession": { "name": "Succession Certificate", "category": "succession", "feeType": "percentage", "valuationMethod": "2.5% of debt value", "slabApplicable": false, "defaultRate": 2.5 },
+    "rent": { "name": "Rent Petition", "category": "rent", "feeType": "slab", "valuationMethod": "Annual rent × multiplier (typically 10)", "slabApplicable": true },
+    "consumer": { "name": "Consumer Complaint", "category": "consumer", "feeType": "flat_with_slab", "valuationMethod": "CP Act 2019 slab (₹0/₹2000/₹5000/₹10000/₹20000)", "slabApplicable": true },
+    "company": { "name": "Company Petition", "category": "corporate", "feeType": "fixed", "valuationMethod": "Fixed fee based on petition type", "slabApplicable": false, "defaultFee": 500 }
+  },
+  "commercialCourtRules": {
+    "actName": "Commercial Courts Act, 2015",
+    "amendment": "Commercial Courts (Amendment) Act, 2018",
+    "specifiedValueThreshold": 300000,
+    "specifiedValueFormula": "principal + interest + damages + penalties",
+    "feeSameAsRegular": true,
+    "arbitrationFees": {
+      "section9": { "description": "Interim measures", "fee": 650, "type": "fixed" },
+      "section11": { "description": "Appointment of arbitrator", "fee": 650, "type": "fixed" },
+      "section34": { "description": "Setting aside arbitral award", "fee": 650, "type": "fixed" },
+      "section37": { "description": "Appeals from arbitral tribunal", "fee": 650, "type": "fixed" }
+    },
+    "stateWiseApplication": "All 20 states apply regular court fee rates to the specified value. No state has enacted a separate commercial fee schedule."
+  },
+  "consumerFeeRules2019": {
+    "actName": "Consumer Protection Act, 2019",
+    "feeSlabs": [
+      { "from": 0, "to": 500000, "fee": 0, "label": "Up to ₹5,00,000" },
+      { "from": 500001, "to": 1000000, "fee": 2000, "label": "₹5,00,001 – ₹10,00,000" },
+      { "from": 1000001, "to": 5000000, "fee": 5000, "label": "₹10,00,001 – ₹50,00,000" },
+      { "from": 5000001, "to": 10000000, "fee": 10000, "label": "₹50,00,001 – ₹1,00,00,000" },
+      { "from": 10000001, "to": null, "fee": 20000, "label": "Above ₹1,00,00,000" }
+    ],
+    "note": "These fees are under the CP Act 2019, NOT the Court Fees Act. Separate jurisdiction entirely."
+  },
+    "comparisonTable": {
+    "heading": "Court Fee Comparison Across States — ₹1,00,000 Suit",
+    "values": {
+      "delhi": { "fee": 3562, "rank": 9 },
+      "maharashtra": { "fee": 4050, "rank": 5 },
+      "karnataka": { "fee": 3500, "rank": 7 },
+      "tamilnadu": { "fee": 4350, "rank": 3 },
+      "uttarpradesh": { "fee": 6000, "rank": 1 },
+      "kerala": { "fee": 4500, "rank": 2 },
+      "gujarat": { "fee": 4200, "rank": 4 },
+      "rajasthan": { "fee": 3500, "rank": 7 },
+      "haryana": { "fee": 4400, "rank": 3 },
+      "punjab": { "fee": 4400, "rank": 3 },
+      "westbengal": { "fee": 4200, "rank": 4 },
+      "telangana": { "fee": 4350, "rank": 3 },
+      "andhrapradesh": { "fee": 4350, "rank": 3 },
+      "madhyapradesh": { "fee": 4350, "rank": 3 },
+      "bihar": { "fee": 4350, "rank": 3 },
+      "odisha": { "fee": 4350, "rank": 3 },
+      "assam": { "fee": 4350, "rank": 3 },
+      "jharkhand": { "fee": 4000, "rank": 6 },
+      "chhattisgarh": { "fee": 4350, "rank": 3 },
+      "goa": { "fee": 4350, "rank": 3 }
+    }
+  }
+}

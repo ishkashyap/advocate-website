@@ -1,0 +1,175 @@
+{
+  "apiVersion": "1.0.0",
+  "baseUrl": "/api/fee",
+  "endpoints": {
+    "GET /states": {
+      "description": "List all supported states with their fee metadata",
+      "queryParams": {},
+      "response": {
+        "success": true,
+        "total": 20,
+        "data": [
+          {
+            "id": 1,
+            "stateName": "Delhi",
+            "stateCode": "DL",
+            "actName": "Court Fees Act (as applicable to Delhi)",
+            "actYear": 1870,
+            "calcType": "slab",
+            "minFee": 100,
+            "maxFee": 150000,
+            "feeCapApplies": true
+          }
+        ]
+      }
+    },
+    "GET /case-types": {
+      "description": "List all supported case types with calculation metadata",
+      "queryParams": {},
+      "response": {
+        "success": true,
+        "total": 18,
+        "data": [
+          {
+            "id": 1,
+            "caseTypeName": "Money Recovery Suit",
+            "category": "civil",
+            "feeType": "slab",
+            "valuationMethod": "suit_value",
+            "slabApplicable": true,
+            "fixedFeeDefault": 0
+          }
+        ]
+      }
+    },
+    "GET /rules": {
+      "description": "Fetch fee rules with optional state/case-type filters",
+      "queryParams": {
+        "stateId": { "type": "integer", "optional": true, "description": "Filter by state ID" },
+        "caseTypeId": { "type": "integer", "optional": true, "description": "Filter by case type ID" }
+      },
+      "response": {
+        "success": true,
+        "total": 1,
+        "data": [
+          {
+            "id": 1,
+            "stateId": 1,
+            "stateName": "Delhi",
+            "caseTypeId": 1,
+            "caseTypeName": "Money Recovery Suit",
+            "feeType": "slab",
+            "minimumFee": 100,
+            "maximumFee": 150000,
+            "slabs": [
+              { "slabStart": 0, "slabEnd": 50000, "percentageRate": 2.0, "fixedComponent": 0, "description": "2% on first ₹50,000" },
+              { "slabStart": 50000, "slabEnd": 100000, "percentageRate": 3.0, "fixedComponent": 0, "description": "3% on ₹50,001 – ₹1,00,000" },
+              { "slabStart": 100000, "slabEnd": 500000, "percentageRate": 4.0, "fixedComponent": 0, "description": "4% on ₹1,00,001 – ₹5,00,000" },
+              { "slabStart": 500000, "slabEnd": null, "percentageRate": 4.0, "fixedComponent": 0, "description": "4% above ₹5,00,000" }
+            ]
+          }
+        ]
+      }
+    },
+    "GET /calculate": {
+      "description": "Calculate court fee for a given state, case type, and valuation",
+      "queryParams": {
+        "stateId": { "type": "integer", "required": true, "description": "State ID" },
+        "caseTypeId": { "type": "integer", "required": true, "description": "Case type ID" },
+        "suitValue": { "type": "number", "optional": true, "description": "Suit valuation amount (required for ad valorem case types)" },
+        "principal": { "type": "number", "optional": true, "description": "Principal amount (commercial suits)" },
+        "interest": { "type": "number", "optional": true, "description": "Interest amount (commercial suits)" },
+        "damages": { "type": "number", "optional": true, "description": "Damages claimed (commercial suits)" },
+        "penalties": { "type": "number", "optional": true, "description": "Penalties claimed (commercial suits)" },
+        "shareNumerator": { "type": "number", "optional": true, "description": "Plaintiff's share numerator (partition suits)" },
+        "shareDenominator": { "type": "number", "optional": true, "description": "Plaintiff's share denominator (partition suits)" },
+        "annualRent": { "type": "number", "optional": true, "description": "Annual rent amount (rent petitions)" },
+        "marketValue": { "type": "number", "optional": true, "description": "Market value (declaration/injunction suits)" },
+        "agreementValue": { "type": "number", "optional": true, "description": "Agreement value (specific performance)" },
+        "estateValue": { "type": "number", "optional": true, "description": "Estate value (probate/succession)" },
+        "claimValue": { "type": "number", "optional": true, "description": "Claim value (consumer complaints)" }
+      },
+      "response": {
+        "success": true,
+        "data": {
+          "stateId": 1,
+          "stateName": "Delhi",
+          "caseTypeId": 1,
+          "caseTypeName": "Money Recovery Suit",
+          "suitValue": 227073,
+          "feeType": "slab",
+          "totalFee": 7583,
+          "feeBeforeCaps": 7583,
+          "minFee": 100,
+          "maxFee": 150000,
+          "minFeeApplied": false,
+          "maxFeeApplied": false,
+          "roundingMethod": "ceil",
+          "breakup": [
+            { "slab": "2% on first ₹50,000", "portion": 50000, "rate": 0.02, "fee": 1000 },
+            { "slab": "3% on ₹50,001 – ₹1,00,000", "portion": 50000, "rate": 0.03, "fee": 1500 },
+            { "slab": "4% on ₹1,00,001 – ₹5,00,000", "portion": 127073, "rate": 0.04, "fee": 5083 }
+          ],
+          "calculationSteps": [
+            "Slab 1: ₹50,000 × 2% = ₹1,000",
+            "Slab 2: ₹50,000 × 3% = ₹1,500",
+            "Slab 3: ₹1,27,073 × 4% = ₹5,083",
+            "Total: ₹1,000 + ₹1,500 + ₹5,083 = ₹7,583",
+            "Min fee: ₹100 (not applied)",
+            "Max fee: ₹1,50,000 (not applied)"
+          ],
+          "calculatedAt": "2026-05-26T19:30:00.000Z"
+        }
+      },
+      "errorResponse": {
+        "success": false,
+        "error": {
+          "code": "INVALID_STATE",
+          "message": "State not found",
+          "details": "No state found with ID 999"
+        }
+      }
+    },
+    "GET /compare": {
+      "description": "Compare court fee across multiple states for a given valuation",
+      "queryParams": {
+        "suitValue": { "type": "number", "required": true },
+        "stateIds": { "type": "array", "required": false, "description": "Comma-separated state IDs. If omitted, all states returned." },
+        "caseTypeId": { "type": "integer", "optional": true }
+      },
+      "response": {
+        "success": true,
+        "suitValue": 227073,
+        "data": [
+          { "stateId": 1, "stateName": "Delhi", "fee": 7583, "minFee": 100, "maxFee": 150000 },
+          { "stateId": 2, "stateName": "Maharashtra", "fee": 6817, "minFee": 50, "maxFee": 150000 },
+          { "stateId": 3, "stateName": "Karnataka", "fee": 6407, "minFee": 100, "maxFee": 150000 },
+          { "stateId": 5, "stateName": "Uttar Pradesh", "fee": 15895, "minFee": 25, "maxFee": 125000 }
+        ]
+      }
+    },
+    "POST /download-request": {
+      "description": "Log a PDF report download request with lead capture",
+      "body": {
+        "email": { "type": "string", "required": true },
+        "stateId": { "type": "integer", "required": true },
+        "suitValue": { "type": "number", "required": true },
+        "feeAmount": { "type": "number", "required": true },
+        "name": { "type": "string", "optional": true }
+      },
+      "response": {
+        "success": true,
+        "message": "Download request logged successfully",
+        "data": { "id": 42 }
+      }
+    }
+  },
+  "errorCodes": {
+    "INVALID_STATE": "State not found in database",
+    "INVALID_CASE_TYPE": "Case type not found",
+    "INVALID_VALUE": "Suit value must be a positive number",
+    "MISSING_PARAMETER": "Required parameter missing",
+    "VALUATION_ERROR": "Error calculating valuation",
+    "RATE_LIMIT": "Too many requests — 500 requests per 15 minutes"
+  }
+}

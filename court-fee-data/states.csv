@@ -1,0 +1,21 @@
+id,state_name,state_code,act_name,act_year,calc_type,min_fee,max_fee,rounding_rule,effective_date,notes
+1,Delhi,DL,Court Fees Act (as applicable to Delhi),1870,statutory_table,,,ceil,27-07-1959,"Original Schedule I statutory fee table (Punjab Act 14 of 1958 as extended to Delhi). 2012 Delhi Amendment struck down (WP(C) 4770/2012). No max fee cap."
+2,Maharashtra,MH,Maharashtra Court Fees Act,1959,slab,50,150000,ceil,01-06-1960,Schedule I with Maharashtra amendments. Min fee ₹50 up to ₹5000.
+3,Karnataka,KA,Karnataka Court Fees and Suits Valuation Act,1958,slab,100,150000,ceil,01-10-1958,Section 23-26. Independent state act. Min fee ₹100 on first slab.
+4,Tamil Nadu,TN,Tamil Nadu Court Fees and Suits Valuation Act,1955,slab,50,100000,ceil,01-06-1955,Schedule I. Min fee ₹50 on first ₹5000.
+5,Uttar Pradesh,UP,Uttar Pradesh Court Fees Act (as amended),1870,total_pct,25,125000,ceil,01-01-1998,Unique percentage-of-total structure. Amended extensively by UP amendments.
+6,Kerala,KL,Kerala Court Fees and Suits Valuation Act,1959,slab,50,100000,ceil,01-02-1960,Independent state act. Schedule I.
+7,Gujarat,GJ,Gujarat Court Fees Act,2004,slab,50,100000,ceil,01-04-2004,Replaced Bombay Court Fees Act in Gujarat.
+8,Rajasthan,RJ,Rajasthan Court Fees and Suits Valuation Act,1961,slab,100,150000,ceil,01-11-1961,Independent state act. Sections 23-27.
+9,Haryana,HR,Court Fees Act (Haryana Adaptation),1870,slab,50,100000,ceil,01-11-1966,Adapted from Central Act with Haryana amendments.
+10,Punjab,PB,Court Fees Act (Punjab Adaptation),1870,slab,50,100000,ceil,01-11-1966,Adapted from Central Act with Punjab amendments.
+11,West Bengal,WB,West Bengal Court Fees Act (as amended),1870,slab,50,150000,ceil,01-01-1993,Significantly amended by West Bengal. Different slab structure.
+12,Telangana,TS,Telangana Court Fees and Suits Valuation Act,1956,slab,50,100000,ceil,02-06-2014,Continued from AP Act post-bifurcation.
+13,Andhra Pradesh,AP,Andhra Pradesh Court Fees and Suits Valuation Act,1956,slab,50,100000,ceil,01-04-1956,Parent Act for Telangana before bifurcation.
+14,Madhya Pradesh,MP,Court Fees Act (MP Adaptation),1870,slab,50,100000,ceil,01-11-1956,Adapted from Central Act with MP amendments.
+15,Bihar,BR,Court Fees Act (Bihar Adaptation),1870,slab,50,100000,ceil,01-01-1994,Adapted from Central Act with Bihar amendments.
+16,Odisha,OD,Court Fees Act (Odisha Adaptation),1870,slab,50,100000,ceil,01-04-1936,Adapted from Central Act with Odisha amendments.
+17,Assam,AS,Court Fees Act (Assam Adaptation),1870,slab,50,100000,ceil,01-01-1948,Adapted from Central Act with Assam amendments.
+18,Jharkhand,JH,Court Fees Act (Jharkhand Adaptation),1870,slab,50,100000,ceil,15-11-2000,Continued Bihar Act post-bifurcation with Jharkhand amendments.
+19,Chhattisgarh,CG,Court Fees Act (Chhattisgarh Adaptation),1870,slab,50,100000,ceil,01-11-2000,Continued MP Act post-bifurcation.
+20,Goa,GA,Goa Court Fees Act,1970,slab,50,100000,ceil,01-01-1971,Separate Act for Goa after liberation.

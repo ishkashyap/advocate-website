@@ -1,0 +1,193 @@
+state_id,state_name,fee_type,slab_start,slab_end,percentage_rate,fixed_component,description,is_active
+1,Delhi,statutory_table,0,5,0,0.50,"Fixed ₹0.50 up to ₹5",FALSE
+1,Delhi,statutory_table,5,10,0,0.50,"Fixed ₹0.50 ₹5–₹10",FALSE
+1,Delhi,statutory_table,10,15,0,1.00,"Fixed ₹1.00 ₹10–₹15",FALSE
+1,Delhi,statutory_table,15,20,0,1.50,"Fixed ₹1.50 ₹15–₹20",FALSE
+1,Delhi,statutory_table,20,25,0,2.00,"Fixed ₹2.00 ₹20–₹25",FALSE
+1,Delhi,statutory_table,25,50,0,5.00,"Fixed ₹5.00 ₹25–₹50",FALSE
+1,Delhi,statutory_table,50,100,0,7.50,"Fixed ₹7.50 ₹50–₹100",FALSE
+1,Delhi,statutory_table,100,200,0,10.00,"Fixed ₹10.00 ₹100–₹200",FALSE
+1,Delhi,statutory_table,200,300,0,15.00,"Fixed ₹15.00 ₹200–₹300",FALSE
+1,Delhi,statutory_table,300,400,0,20.00,"Fixed ₹20.00 ₹300–₹400",FALSE
+1,Delhi,statutory_table,400,500,0,25.00,"Fixed ₹25.00 ₹400–₹500",FALSE
+1,Delhi,statutory_table,500,600,0,30.00,"Fixed ₹30.00 ₹500–₹600",FALSE
+1,Delhi,statutory_table,600,700,0,35.00,"Fixed ₹35.00 ₹600–₹700",FALSE
+1,Delhi,statutory_table,700,800,0,40.00,"Fixed ₹40.00 ₹700–₹800",FALSE
+1,Delhi,statutory_table,800,900,0,45.00,"Fixed ₹45.00 ₹800–₹900",FALSE
+1,Delhi,statutory_table,900,1000,0,50.00,"Fixed ₹50.00 ₹900–₹1,000",FALSE
+1,Delhi,statutory_table,1000,2000,0,75.00,"Fixed ₹75.00 ₹1,000–₹2,000",FALSE
+1,Delhi,statutory_table,2000,3000,0,100.00,"Fixed ₹100.00 ₹2,000–₹3,000",FALSE
+1,Delhi,statutory_table,3000,4000,0,125.00,"Fixed ₹125.00 ₹3,000–₹4,000",FALSE
+1,Delhi,statutory_table,4000,5000,0,150.00,"Fixed ₹150.00 ₹4,000–₹5,000",FALSE
+1,Delhi,statutory_table,5000,6000,0,200.00,"Fixed ₹200.00 ₹5,000–₹6,000",FALSE
+1,Delhi,statutory_table,6000,7000,0,250.00,"Fixed ₹250.00 ₹6,000–₹7,000",FALSE
+1,Delhi,statutory_table,7000,8000,0,300.00,"Fixed ₹300.00 ₹7,000–₹8,000",FALSE
+1,Delhi,statutory_table,8000,9000,0,350.00,"Fixed ₹350.00 ₹8,000–₹9,000",FALSE
+1,Delhi,statutory_table,9000,10000,0,400.00,"Fixed ₹400.00 ₹9,000–₹10,000",FALSE
+1,Delhi,statutory_table,10000,15000,0,500.00,"Fixed ₹500.00 ₹10,000–₹15,000",FALSE
+1,Delhi,statutory_table,15000,20000,0,700.00,"Fixed ₹700.00 ₹15,000–₹20,000",FALSE
+1,Delhi,statutory_table,20000,25000,0,900.00,"Fixed ₹900.00 ₹20,000–₹25,000",FALSE
+1,Delhi,statutory_table,25000,30000,0,1100.00,"Fixed ₹1,100.00 ₹25,000–₹30,000",FALSE
+1,Delhi,statutory_table,30000,40000,0,1400.00,"Fixed ₹1,400.00 ₹30,000–₹40,000",FALSE
+1,Delhi,statutory_table,40000,50000,0,1700.00,"Fixed ₹1,700.00 ₹40,000–₹50,000",FALSE
+1,Delhi,statutory_table,50000,60000,0,2100.00,"Fixed ₹2,100.00 ₹50,000–₹60,000",FALSE
+1,Delhi,statutory_table,60000,70000,0,2500.00,"Fixed ₹2,500.00 ₹60,000–₹70,000",FALSE
+1,Delhi,statutory_table,70000,80000,0,2900.00,"Fixed ₹2,900.00 ₹70,000–₹80,000",FALSE
+1,Delhi,statutory_table,80000,90000,0,3300.00,"Fixed ₹3,300.00 ₹80,000–₹90,000",FALSE
+1,Delhi,statutory_table,90000,100000,0,3562.00,"Fixed ₹3,562.00 ₹90,000–₹1,00,000",FALSE
+1,Delhi,statutory_table,100001,300000,0,4588.80,"Fixed ₹4,588.80 ₹1,00,001–₹3,00,000",FALSE
+1,Delhi,statutory_table,300001,500000,0,6500.00,"Fixed ₹6,500.00 ₹3,00,001–₹5,00,000",FALSE
+1,Delhi,statutory_table,500001,1000000,0,9000.00,"Fixed ₹9,000.00 ₹5,00,001–₹10,00,000",FALSE
+1,Delhi,statutory_table,1000001,999999999,0,12500.00,"Fixed ₹12,500.00 above ₹10,00,000",FALSE
+1,Delhi,fixed,0,0,0,150,"Divorce petition fixed fee",TRUE
+1,Delhi,fixed,0,0,0,100,"Bail application fixed fee",TRUE
+1,Delhi,fixed,0,0,0,500,"Writ petition fixed fee",TRUE
+1,Delhi,fixed,0,0,0,650,"Arbitration petition fixed fee",TRUE
+1,Delhi,certificate,0,999999999,2.5,0,"Succession certificate / probate fee at 2.5% of value",TRUE
+2,Maharashtra,slab,0,5000,0,50,"Fixed fee ₹50 up to ₹5,000",TRUE
+2,Maharashtra,slab,5000,25000,5.0,0,"5% on ₹5,001 - ₹25,000",TRUE
+2,Maharashtra,slab,25000,50000,4.0,0,"4% on ₹25,001 - ₹50,000",TRUE
+2,Maharashtra,slab,50000,500000,3.0,0,"3% on ₹50,001 - ₹5,00,000",TRUE
+2,Maharashtra,slab,500000,999999999,2.0,0,"2% above ₹5,00,000",TRUE
+2,Maharashtra,fixed,0,0,0,150,"Divorce fixed fee",TRUE
+2,Maharashtra,fixed,0,0,0,100,"Bail fixed fee",TRUE
+2,Maharashtra,fixed,0,0,0,500,"Writ fixed fee",TRUE
+2,Maharashtra,fixed,0,0,0,650,"Arbitration fixed fee",TRUE
+3,Karnataka,slab,0,50000,4.0,0,"4% on first ₹50,000 (min ₹100)",TRUE
+3,Karnataka,slab,50000,200000,3.0,0,"3% on ₹50,001 - ₹2,00,000",TRUE
+3,Karnataka,slab,200000,500000,2.0,0,"2% on ₹2,00,001 - ₹5,00,000",TRUE
+3,Karnataka,slab,500000,999999999,1.5,0,"1.5% above ₹5,00,000",TRUE
+3,Karnataka,fixed,0,0,0,150,"Divorce fixed fee",TRUE
+3,Karnataka,fixed,0,0,0,100,"Bail fixed fee",TRUE
+3,Karnataka,fixed,0,0,0,500,"Writ fixed fee",TRUE
+4,Tamil Nadu,slab,0,5000,5.0,0,"5% on first ₹5,000 (min ₹50)",TRUE
+4,Tamil Nadu,slab,5000,25000,5.0,0,"5% on ₹5,001 - ₹25,000",TRUE
+4,Tamil Nadu,slab,25000,100000,4.0,0,"4% on ₹25,001 - ₹1,00,000",TRUE
+4,Tamil Nadu,slab,100000,500000,3.0,0,"3% on ₹1,00,001 - ₹5,00,000",TRUE
+4,Tamil Nadu,slab,500000,999999999,2.0,0,"2% above ₹5,00,000",TRUE
+4,Tamil Nadu,fixed,0,0,0,150,"Divorce fixed fee",TRUE
+4,Tamil Nadu,fixed,0,0,0,100,"Bail fixed fee",TRUE
+4,Tamil Nadu,fixed,0,0,0,500,"Writ fixed fee",TRUE
+5,Uttar Pradesh,total_pct,0,2500,0,25,"Fixed ₹25 up to ₹2,500",TRUE
+5,Uttar Pradesh,total_pct,2500,25000,5.0,0,"5% of total claim (₹2,501 - ₹25,000)",TRUE
+5,Uttar Pradesh,total_pct,25001,100000,6.0,0,"6% of total claim (₹25,001 - ₹1,00,000)",TRUE
+5,Uttar Pradesh,total_pct,100001,500000,7.0,0,"7% of total claim (₹1,00,001 - ₹5,00,000)",TRUE
+5,Uttar Pradesh,total_pct,500001,999999999,7.5,0,"7.5% of total claim (above ₹5,00,001)",TRUE
+5,Uttar Pradesh,fixed,0,0,0,150,"Divorce fixed fee",TRUE
+5,Uttar Pradesh,fixed,0,0,0,100,"Bail fixed fee",TRUE
+5,Uttar Pradesh,fixed,0,0,0,500,"Writ fixed fee",TRUE
+6,Kerala,slab,0,10000,5.0,0,"5% on first ₹10,000",TRUE
+6,Kerala,slab,10000,50000,5.0,0,"5% on ₹10,001 - ₹50,000",TRUE
+6,Kerala,slab,50000,200000,4.0,0,"4% on ₹50,001 - ₹2,00,000",TRUE
+6,Kerala,slab,200000,500000,3.0,0,"3% on ₹2,00,001 - ₹5,00,000",TRUE
+6,Kerala,slab,500000,999999999,2.0,0,"2% above ₹5,00,000",TRUE
+6,Kerala,fixed,0,0,0,150,"Divorce fixed fee",TRUE
+6,Kerala,fixed,0,0,0,100,"Bail fixed fee",TRUE
+6,Kerala,fixed,0,0,0,500,"Writ fixed fee",TRUE
+7,Gujarat,slab,0,20000,5.0,0,"5% on first ₹20,000",TRUE
+7,Gujarat,slab,20000,100000,4.0,0,"4% on ₹20,001 - ₹1,00,000",TRUE
+7,Gujarat,slab,100000,500000,3.0,0,"3% on ₹1,00,001 - ₹5,00,000",TRUE
+7,Gujarat,slab,500000,999999999,2.0,0,"2% above ₹5,00,000",TRUE
+7,Gujarat,fixed,0,0,0,150,"Divorce fixed fee",TRUE
+7,Gujarat,fixed,0,0,0,100,"Bail fixed fee",TRUE
+7,Gujarat,fixed,0,0,0,500,"Writ fixed fee",TRUE
+8,Rajasthan,slab,0,50000,4.0,0,"4% on first ₹50,000 (min ₹100)",TRUE
+8,Rajasthan,slab,50000,200000,3.0,0,"3% on ₹50,001 - ₹2,00,000",TRUE
+8,Rajasthan,slab,200000,500000,2.0,0,"2% on ₹2,00,001 - ₹5,00,000",TRUE
+8,Rajasthan,slab,500000,999999999,1.5,0,"1.5% above ₹5,00,000",TRUE
+8,Rajasthan,fixed,0,0,0,150,"Divorce fixed fee",TRUE
+8,Rajasthan,fixed,0,0,0,100,"Bail fixed fee",TRUE
+8,Rajasthan,fixed,0,0,0,500,"Writ fixed fee",TRUE
+9,Haryana,slab,0,10000,4.0,0,"4% on first ₹10,000",TRUE
+9,Haryana,slab,10000,50000,4.0,0,"4% on ₹10,001 - ₹50,000",TRUE
+9,Haryana,slab,50000,200000,3.0,0,"3% on ₹50,001 - ₹2,00,000",TRUE
+9,Haryana,slab,200000,500000,2.5,0,"2.5% on ₹2,00,001 - ₹5,00,000",TRUE
+9,Haryana,slab,500000,999999999,2.0,0,"2% above ₹5,00,000",TRUE
+9,Haryana,fixed,0,0,0,150,"Divorce fixed fee",TRUE
+9,Haryana,fixed,0,0,0,100,"Bail fixed fee",TRUE
+9,Haryana,fixed,0,0,0,500,"Writ fixed fee",TRUE
+10,Punjab,slab,0,10000,4.0,0,"4% on first ₹10,000",TRUE
+10,Punjab,slab,10000,50000,4.0,0,"4% on ₹10,001 - ₹50,000",TRUE
+10,Punjab,slab,50000,200000,3.0,0,"3% on ₹50,001 - ₹2,00,000",TRUE
+10,Punjab,slab,200000,500000,2.5,0,"2.5% on ₹2,00,001 - ₹5,00,000",TRUE
+10,Punjab,slab,500000,999999999,2.0,0,"2% above ₹5,00,000",TRUE
+10,Punjab,fixed,0,0,0,150,"Divorce fixed fee",TRUE
+10,Punjab,fixed,0,0,0,100,"Bail fixed fee",TRUE
+10,Punjab,fixed,0,0,0,500,"Writ fixed fee",TRUE
+11,West Bengal,slab,0,20000,5.0,0,"5% on first ₹20,000",TRUE
+11,West Bengal,slab,20000,100000,4.0,0,"4% on ₹20,001 - ₹1,00,000",TRUE
+11,West Bengal,slab,100000,300000,3.0,0,"3% on ₹1,00,001 - ₹3,00,000",TRUE
+11,West Bengal,slab,300000,999999999,2.0,0,"2% above ₹3,00,000",TRUE
+11,West Bengal,fixed,0,0,0,150,"Divorce fixed fee",TRUE
+11,West Bengal,fixed,0,0,0,100,"Bail fixed fee",TRUE
+11,West Bengal,fixed,0,0,0,500,"Writ fixed fee",TRUE
+12,Telangana,slab,0,5000,5.0,0,"5% on first ₹5,000",TRUE
+12,Telangana,slab,5000,25000,5.0,0,"5% on ₹5,001 - ₹25,000",TRUE
+12,Telangana,slab,25000,100000,4.0,0,"4% on ₹25,001 - ₹1,00,000",TRUE
+12,Telangana,slab,100000,500000,3.0,0,"3% on ₹1,00,001 - ₹5,00,000",TRUE
+12,Telangana,slab,500000,999999999,2.0,0,"2% above ₹5,00,000",TRUE
+12,Telangana,fixed,0,0,0,150,"Divorce fixed fee",TRUE
+12,Telangana,fixed,0,0,0,100,"Bail fixed fee",TRUE
+12,Telangana,fixed,0,0,0,500,"Writ fixed fee",TRUE
+13,Andhra Pradesh,slab,0,5000,5.0,0,"5% on first ₹5,000",TRUE
+13,Andhra Pradesh,slab,5000,25000,5.0,0,"5% on ₹5,001 - ₹25,000",TRUE
+13,Andhra Pradesh,slab,25000,100000,4.0,0,"4% on ₹25,001 - ₹1,00,000",TRUE
+13,Andhra Pradesh,slab,100000,500000,3.0,0,"3% on ₹1,00,001 - ₹5,00,000",TRUE
+13,Andhra Pradesh,slab,500000,999999999,2.0,0,"2% above ₹5,00,000",TRUE
+13,Andhra Pradesh,fixed,0,0,0,150,"Divorce fixed fee",TRUE
+13,Andhra Pradesh,fixed,0,0,0,100,"Bail fixed fee",TRUE
+13,Andhra Pradesh,fixed,0,0,0,500,"Writ fixed fee",TRUE
+14,Madhya Pradesh,slab,0,5000,5.0,0,"5% on first ₹5,000",TRUE
+14,Madhya Pradesh,slab,5000,25000,5.0,0,"5% on ₹5,001 - ₹25,000",TRUE
+14,Madhya Pradesh,slab,25000,100000,4.0,0,"4% on ₹25,001 - ₹1,00,000",TRUE
+14,Madhya Pradesh,slab,100000,500000,3.0,0,"3% on ₹1,00,001 - ₹5,00,000",TRUE
+14,Madhya Pradesh,slab,500000,999999999,2.0,0,"2% above ₹5,00,000",TRUE
+14,Madhya Pradesh,fixed,0,0,0,150,"Divorce fixed fee",TRUE
+14,Madhya Pradesh,fixed,0,0,0,100,"Bail fixed fee",TRUE
+14,Madhya Pradesh,fixed,0,0,0,500,"Writ fixed fee",TRUE
+15,Bihar,slab,0,5000,0,50,"Fixed fee ₹50 up to ₹5,000",TRUE
+15,Bihar,slab,5000,100000,4.0,0,"4% on ₹5,001 - ₹1,00,000",TRUE
+15,Bihar,slab,100000,300000,3.0,0,"3% on ₹1,00,001 - ₹3,00,000",TRUE
+15,Bihar,slab,300000,999999999,2.0,0,"2% above ₹3,00,000",TRUE
+15,Bihar,fixed,0,0,0,150,"Divorce fixed fee",TRUE
+15,Bihar,fixed,0,0,0,100,"Bail fixed fee",TRUE
+15,Bihar,fixed,0,0,0,500,"Writ fixed fee",TRUE
+16,Odisha,slab,0,5000,5.0,0,"5% on first ₹5,000",TRUE
+16,Odisha,slab,5000,25000,5.0,0,"5% on ₹5,001 - ₹25,000",TRUE
+16,Odisha,slab,25000,100000,4.0,0,"4% on ₹25,001 - ₹1,00,000",TRUE
+16,Odisha,slab,100000,500000,3.0,0,"3% on ₹1,00,001 - ₹5,00,000",TRUE
+16,Odisha,slab,500000,999999999,2.0,0,"2% above ₹5,00,000",TRUE
+16,Odisha,fixed,0,0,0,150,"Divorce fixed fee",TRUE
+16,Odisha,fixed,0,0,0,100,"Bail fixed fee",TRUE
+16,Odisha,fixed,0,0,0,500,"Writ fixed fee",TRUE
+17,Assam,slab,0,5000,5.0,0,"5% on first ₹5,000",TRUE
+17,Assam,slab,5000,25000,5.0,0,"5% on ₹5,001 - ₹25,000",TRUE
+17,Assam,slab,25000,100000,4.0,0,"4% on ₹25,001 - ₹1,00,000",TRUE
+17,Assam,slab,100000,500000,3.0,0,"3% on ₹1,00,001 - ₹5,00,000",TRUE
+17,Assam,slab,500000,999999999,2.0,0,"2% above ₹5,00,000",TRUE
+17,Assam,fixed,0,0,0,150,"Divorce fixed fee",TRUE
+17,Assam,fixed,0,0,0,100,"Bail fixed fee",TRUE
+17,Assam,fixed,0,0,0,500,"Writ fixed fee",TRUE
+18,Jharkhand,slab,0,5000,4.0,0,"4% on first ₹5,000",TRUE
+18,Jharkhand,slab,5000,100000,4.0,0,"4% on ₹5,001 - ₹1,00,000",TRUE
+18,Jharkhand,slab,100000,300000,3.0,0,"3% on ₹1,00,001 - ₹3,00,000",TRUE
+18,Jharkhand,slab,300000,999999999,2.0,0,"2% above ₹3,00,000",TRUE
+18,Jharkhand,fixed,0,0,0,150,"Divorce fixed fee",TRUE
+18,Jharkhand,fixed,0,0,0,100,"Bail fixed fee",TRUE
+18,Jharkhand,fixed,0,0,0,500,"Writ fixed fee",TRUE
+19,Chhattisgarh,slab,0,5000,5.0,0,"5% on first ₹5,000",TRUE
+19,Chhattisgarh,slab,5000,25000,5.0,0,"5% on ₹5,001 - ₹25,000",TRUE
+19,Chhattisgarh,slab,25000,100000,4.0,0,"4% on ₹25,001 - ₹1,00,000",TRUE
+19,Chhattisgarh,slab,100000,500000,3.0,0,"3% on ₹1,00,001 - ₹5,00,000",TRUE
+19,Chhattisgarh,slab,500000,999999999,2.0,0,"2% above ₹5,00,000",TRUE
+19,Chhattisgarh,fixed,0,0,0,150,"Divorce fixed fee",TRUE
+19,Chhattisgarh,fixed,0,0,0,100,"Bail fixed fee",TRUE
+19,Chhattisgarh,fixed,0,0,0,500,"Writ fixed fee",TRUE
+20,Goa,slab,0,5000,5.0,0,"5% on first ₹5,000",TRUE
+20,Goa,slab,5000,25000,5.0,0,"5% on ₹5,001 - ₹25,000",TRUE
+20,Goa,slab,25000,100000,4.0,0,"4% on ₹25,001 - ₹1,00,000",TRUE
+20,Goa,slab,100000,500000,3.0,0,"3% on ₹1,00,001 - ₹5,00,000",TRUE
+20,Goa,slab,500000,999999999,2.0,0,"2% above ₹5,00,000",TRUE
+20,Goa,fixed,0,0,0,150,"Divorce fixed fee",TRUE
+20,Goa,fixed,0,0,0,100,"Bail fixed fee",TRUE
+20,Goa,fixed,0,0,0,500,"Writ fixed fee",TRUE
