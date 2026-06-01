@@ -1,0 +1,1121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Panel | Dejure Law Office</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link id="favicon-link" rel="icon" type="image/png" href="images/logo.png">
+    <link rel="stylesheet" href="css/style.css">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'navy': '#1e3a5f',
+                        'navy-dark': '#0f2440',
+                        'navy-light': '#2d4a7a',
+                        'gold': '#D4AF37',
+                        'gold-light': '#C9A227',
+                    },
+                    fontFamily: {
+                        'serif': ['Playfair Display', 'serif'],
+                        'sans': ['Inter', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        .glass-card {
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+            border: 1px solid rgba(30, 58, 95, 0.1);
+        }
+        .tab-active {
+            color: #1e3a5f;
+            border-bottom: 3px solid #D4AF37;
+            font-weight: 600;
+        }
+        .input-premium {
+            background: white;
+            color: #1e3a5f;
+            border: 2px solid #e5e7eb;
+        }
+        .input-premium:focus {
+            border-color: #D4AF37;
+            box-shadow: 0 0 0 3px rgba(212, 175, 55, 0.1);
+        }
+        .btn-premium {
+            background: linear-gradient(135deg, #1e3a5f 0%, #2d4a7a 100%);
+            color: white;
+            transition: all 0.3s ease;
+        }
+        .btn-premium:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 30px rgba(30, 58, 95, 0.2);
+        }
+        .btn-gold-premium {
+            background: linear-gradient(135deg, #D4AF37 0%, #F0D060 100%);
+            color: #1e3a5f;
+            font-weight: 600;
+            transition: all 0.3s ease;
+        }
+        .btn-gold-premium:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 30px rgba(212, 175, 55, 0.3);
+        }
+    </style>
+
+    <meta name="description" content="Dejure Law Office offers premier legal representation in Civil Litigation, Corporate Law, and Family Law. Schedule a consultation today.">
+    <meta name="keywords" content="Lawyer, Advocate, Legal Services, Corporate Law, Family Law, Civil Litigation">
+    <meta property="og:title" content="Admin Panel | Dejure Law Office">
+    <meta property="og:description" content="Premier legal representation marked by integrity and strategic excellence.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://dejurelawoffice.com">
+    <meta name="twitter:card" content="summary_large_image">
+    
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "LegalService",
+      "name": "Dejure Law Office",
+      "image": "https://dejurelawoffice.com/images/logo.png",
+      "url": "https://dejurelawoffice.com",
+      "telephone": "+91 98765 43210",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "123 Legal Street",
+        "addressLocality": "New Delhi",
+        "postalCode": "110001",
+        "addressCountry": "IN"
+      }
+    }
+    </script>
+
+</head>
+<body class="bg-gray-50 font-sans text-gray-800 min-h-screen">
+    <!-- Login Section -->
+    <div id="loginSection" class="min-h-screen flex items-center justify-center bg-white">
+        <div class="max-w-md w-full mx-4">
+            <div class="text-center mb-10">
+                <img src="images/logo.png" alt="Dejure Law Office" class="h-20 w-auto object-contain mx-auto mb-6 shadow-xl rounded-2xl">
+                <div class="section-divider mt-6"></div>
+            </div>
+            <div class="glass-card p-8 md:p-10 rounded-2xl shadow-xl">
+                <form id="loginForm">
+                    <div class="mb-6">
+                        <label class="block text-navy font-semibold mb-2">Username</label>
+                        <input type="text" id="username" placeholder="Enter username" required
+                            class="input-premium w-full px-4 py-3 rounded-lg w-full">
+                    </div>
+                    <div class="mb-8">
+                        <label class="block text-navy font-semibold mb-2">Password</label>
+                        <input type="password" id="password" placeholder="Enter password" required
+                            class="input-premium w-full px-4 py-3 rounded-lg w-full">
+                    </div>
+                    <button type="submit"
+                        class="btn-premium w-full py-4 rounded-lg font-semibold text-lg w-full">
+                        <span>Login to Dashboard</span>
+                    </button>
+                </form>
+                <div id="loginMessage" class="mt-6"></div>
+                <div class="mt-6 text-center">
+                    <p class="text-gray-400 text-sm">Enter your credentials to access the dashboard</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Admin Dashboard -->
+    <div id="adminSection" class="hidden">
+        <!-- Admin Navigation (Matching index.html style) -->
+        <nav class="bg-white shadow-lg sticky top-0 z-50 border-b border-gray-100">
+            <div class="container mx-auto px-6 py-4">
+                <div class="flex items-center justify-between">
+                    <div class="flex items-center space-x-4">
+                        <img src="images/logo.png" alt="Dejure Law Office" class="h-10 w-auto object-contain">
+                        <span class="text-navy font-serif text-xl font-bold">Admin Panel</span>
+                    </div>
+                    <button onclick="logout()" class="border-2 border-navy text-navy hover:bg-navy hover:text-white px-6 py-2 rounded-md font-semibold transition-all duration-300">
+                        Logout
+                    </button>
+                </div>
+            </div>
+        </nav>
+
+        <!-- Admin Content -->
+        <div class="container mx-auto px-6 py-10">
+            <!-- Tab Navigation (Premium Styling) -->
+            <div class="flex flex-wrap gap-6 mb-10 border-b-2 border-gray-200 pb-4">
+                <button onclick="showTab('home')" id="tab-home" class="tab-btn tab-active pb-4 font-semibold text-lg">
+                    🏠 Home Page
+                </button>
+                <button onclick="showTab('about')" id="tab-about" class="tab-btn pb-4 font-semibold text-lg text-gray-400 hover:text-navy">
+                    ℹ️ About Page
+                </button>
+                <button onclick="showTab('services')" id="tab-services" class="tab-btn pb-4 font-semibold text-lg text-gray-400 hover:text-navy">
+                    ⚙️ Services
+                </button>
+                <button onclick="showTab('inquiries')" id="tab-inquiries" class="tab-btn pb-4 font-semibold text-lg text-gray-400 hover:text-navy">
+                    💬 Inquiries
+                </button>
+                <button onclick="showTab('contact-page')" id="tab-contact-page" class="tab-btn pb-4 font-semibold text-lg text-gray-400 hover:text-navy">
+                    📍 Contact Page
+                </button>
+                
+                <button onclick="showTab('announcements')" id="tab-announcements" class="tab-btn pb-4 font-semibold text-lg text-gray-400 hover:text-navy">
+                    📢 Announcements
+                </button>
+                <button onclick="showTab('calculator')" id="tab-calculator" class="tab-btn pb-4 font-semibold text-lg text-gray-400 hover:text-navy">
+                    🧮 Calculator
+                </button>
+                <button onclick="showTab('footer')" id="tab-footer" class="tab-btn pb-4 font-semibold text-lg text-gray-400 hover:text-navy">
+                    👣 Footer
+                </button>
+                <button onclick="showTab('blogs')" id="tab-blogs" class="tab-btn pb-4 font-semibold text-lg text-gray-400 hover:text-navy">
+                    📚 Blogs
+                </button>
+                <button onclick="showTab('bookings')" id="tab-bookings" class="tab-btn pb-4 font-semibold text-lg text-gray-400 hover:text-navy">
+                    📅 Bookings
+                </button>
+                <button onclick="showTab('settings')" id="tab-settings" class="tab-btn pb-4 font-semibold text-lg text-gray-400 hover:text-navy">
+                    ⚙️ Settings
+                </button>
+            </div>
+
+            <!-- About Page Tab -->
+            <div id="panel-about" class="tab-panel hidden">
+                <div class="mb-10">
+                    <h2 class="font-serif text-4xl font-bold text-navy">About Page</h2>
+                    <p class="text-gray-600 mt-2">Edit About page content, story, mission, expertise and images</p>
+                </div>
+                
+                <div class="glass-card p-8 md:p-10 rounded-2xl mb-8 shadow-xl">
+                    <h3 class="font-serif text-2xl font-bold text-navy mb-6">📷 Hero Image</h3>
+                    <div class="mb-4">
+                        <label class="block text-navy font-semibold mb-2">Image URL</label>
+                        <input type="text" id="aboutImageUrl" placeholder="https://example.com/image.jpg" class="input-premium w-full px-4 py-3 rounded-lg">
+                    </div>
+                    <div class="mb-6">
+                        <label class="block text-navy font-semibold mb-2">Or Upload New Image</label>
+                        <input type="file" id="aboutImageUpload" accept="image/*" class="input-premium w-full px-4 py-3 rounded-lg">
+                    </div>
+                    <button onclick="saveAboutImage()" class="btn-premium px-6 py-2 rounded-lg font-semibold">Save Image</button>
+                </div>
+
+                <div class="glass-card p-8 md:p-10 rounded-2xl mb-8 shadow-xl">
+                    <h3 class="font-serif text-2xl font-bold text-navy mb-6">📖 Our Story</h3>
+                    <div class="mb-4">
+                        <label class="block text-navy font-semibold mb-2">Title</label>
+                        <input type="text" id="aboutStoryTitle" placeholder="A Legacy of Legal Excellence Since 1998" class="input-premium w-full px-4 py-3 rounded-lg">
+                    </div>
+                    <div class="mb-4">
+                        <label class="block text-navy font-semibold mb-2">First Paragraph</label>
+                        <textarea id="aboutStoryPara1" rows="3" class="input-premium w-full px-4 py-3 rounded-lg resize-none"></textarea>
+                    </div>
+                    <div class="mb-4">
+                        <label class="block text-navy font-semibold mb-2">Second Paragraph</label>
+                        <textarea id="aboutStoryPara2" rows="3" class="input-premium w-full px-4 py-3 rounded-lg resize-none"></textarea>
+                    </div>
+                    <button onclick="saveAboutStory()" class="btn-premium px-6 py-2 rounded-lg font-semibold">Save Story</button>
+                </div>
+
+                <div class="glass-card p-8 md:p-10 rounded-2xl mb-8 shadow-xl">
+                    <h3 class="font-serif text-2xl font-bold text-navy mb-6">🎯 Our Mission</h3>
+                    <div class="mb-4">
+                        <label class="block text-navy font-semibold mb-2">Mission Text</label>
+                        <textarea id="aboutMissionText" rows="4" placeholder="To provide exceptional legal representation..." class="input-premium w-full px-4 py-3 rounded-lg resize-none"></textarea>
+                    </div>
+                    <button onclick="saveAboutMission()" class="btn-premium px-6 py-2 rounded-lg font-semibold">Save Mission</button>
+                </div>
+
+                <div class="glass-card p-8 md:p-10 rounded-2xl shadow-xl">
+                    <h3 class="font-serif text-2xl font-bold text-navy mb-6">💼 Experience & Expertise</h3>
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                        <div class="p-4 bg-gray-50 rounded-lg">
+                            <h4 class="font-bold text-navy mb-3">Card 1</h4>
+                            <input type="text" id="expertiseTitle1" placeholder="Title (e.g., 25+ Years Practice)" class="input-premium w-full px-3 py-2 rounded-lg mb-2">
+                            <input type="text" id="expertiseDesc1" placeholder="Description" class="input-premium w-full px-3 py-2 rounded-lg">
+                        </div>
+                        <div class="p-4 bg-gray-50 rounded-lg">
+                            <h4 class="font-bold text-navy mb-3">Card 2</h4>
+                            <input type="text" id="expertiseTitle2" placeholder="Title (e.g., 500+ Cases Won)" class="input-premium w-full px-3 py-2 rounded-lg mb-2">
+                            <input type="text" id="expertiseDesc2" placeholder="Description" class="input-premium w-full px-3 py-2 rounded-lg">
+                        </div>
+                        <div class="p-4 bg-gray-50 rounded-lg">
+                            <h4 class="font-bold text-navy mb-3">Card 3</h4>
+                            <input type="text" id="expertiseTitle3" placeholder="Title (e.g., Specialized Focus)" class="input-premium w-full px-3 py-2 rounded-lg mb-2">
+                            <input type="text" id="expertiseDesc3" placeholder="Description" class="input-premium w-full px-3 py-2 rounded-lg">
+                        </div>
+                        <div class="p-4 bg-gray-50 rounded-lg">
+                            <h4 class="font-bold text-navy mb-3">Card 4</h4>
+                            <input type="text" id="expertiseTitle4" placeholder="Title (e.g., Bar Recognition)" class="input-premium w-full px-3 py-2 rounded-lg mb-2">
+                            <input type="text" id="expertiseDesc4" placeholder="Description" class="input-premium w-full px-3 py-2 rounded-lg">
+                        </div>
+                    </div>
+                    <button onclick="saveAboutExpertise()" class="btn-premium px-6 py-2 rounded-lg font-semibold mt-6">Save Expertise</button>
+                </div>
+
+                <div class="glass-card p-8 md:p-10 rounded-2xl mb-8 shadow-xl">
+                    <h3 class="font-serif text-2xl font-bold text-navy mb-6">💎 Core Values</h3>
+                    <p class="text-gray-600 mb-6">These values appear in the About page sidebar</p>
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                        <div class="p-4 bg-gray-50 rounded-lg">
+                            <label class="block text-navy font-semibold mb-2">Value 1</label>
+                            <input type="text" id="coreValue1" placeholder="Integrity & Ethics" class="input-premium w-full px-3 py-2 rounded-lg">
+                        </div>
+                        <div class="p-4 bg-gray-50 rounded-lg">
+                            <label class="block text-navy font-semibold mb-2">Value 2</label>
+                            <input type="text" id="coreValue2" placeholder="Excellence in Service" class="input-premium w-full px-3 py-2 rounded-lg">
+                        </div>
+                        <div class="p-4 bg-gray-50 rounded-lg">
+                            <label class="block text-navy font-semibold mb-2">Value 3</label>
+                            <input type="text" id="coreValue3" placeholder="Client-First Approach" class="input-premium w-full px-3 py-2 rounded-lg">
+                        </div>
+                        <div class="p-4 bg-gray-50 rounded-lg">
+                            <label class="block text-navy font-semibold mb-2">Value 4</label>
+                            <input type="text" id="coreValue4" placeholder="Result-Oriented Strategy" class="input-premium w-full px-3 py-2 rounded-lg">
+                        </div>
+                    </div>
+                    <button onclick="saveCoreValues()" class="btn-premium px-6 py-2 rounded-lg font-semibold mt-6">Save Core Values</button>
+                </div>
+
+                <!-- Booking Important Notes -->
+                <div class="glass-card p-8 md:p-10 rounded-2xl mb-8 shadow-xl">
+                    <h3 class="font-serif text-2xl font-bold text-navy mb-6">📋 Booking Page - Important Notes</h3>
+                    <p class="text-gray-600 mb-6">These notes appear in the booking page sidebar</p>
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                        <div class="p-4 bg-gray-50 rounded-lg md:col-span-2">
+                            <label class="block text-navy font-semibold mb-2">Note 1 (e.g., Consultation Fee)</label>
+                            <input type="text" id="bookingNote1" placeholder="Initial consultation fee: ₹2000" class="input-premium w-full px-3 py-2 rounded-lg">
+                        </div>
+                        <div class="p-4 bg-gray-50 rounded-lg md:col-span-2">
+                            <label class="block text-navy font-semibold mb-2">Note 2 (e.g., Duration)</label>
+                            <input type="text" id="bookingNote2" placeholder="Duration: 45-60 minutes" class="input-premium w-full px-3 py-2 rounded-lg">
+                        </div>
+                        <div class="p-4 bg-gray-50 rounded-lg md:col-span-2">
+                            <label class="block text-navy font-semibold mb-2">Note 3 (e.g., Documents Required)</label>
+                            <input type="text" id="bookingNote3" placeholder="Documents required for consultation" class="input-premium w-full px-3 py-2 rounded-lg">
+                        </div>
+                        <div class="p-4 bg-gray-50 rounded-lg md:col-span-2">
+                            <label class="block text-navy font-semibold mb-2">Note 4 (e.g., Cancellation Policy)</label>
+                            <input type="text" id="bookingNote4" placeholder="Cancellation: 24 hours notice required" class="input-premium w-full px-3 py-2 rounded-lg">
+                        </div>
+                    </div>
+                    <button onclick="saveBookingNotes()" class="btn-premium px-6 py-2 rounded-lg font-semibold mt-6">Save Booking Notes</button>
+                </div>
+
+                <!-- Booking Page CTA & Contact Section -->
+                <div class="glass-card p-8 md:p-10 rounded-2xl mb-8 shadow-xl">
+                    <h3 class="font-serif text-2xl font-bold text-navy mb-6">📞 Booking Page - Call & CTA Section</h3>
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                        <div>
+                            <label class="block text-navy font-semibold mb-2">Sidebar - "Prefer to speak" Title</label>
+                            <input type="text" id="bookingDirectTitle" placeholder="Prefer to speak directly?" class="input-premium w-full px-4 py-3 rounded-lg">
+                        </div>
+                        <div>
+                            <label class="block text-navy font-semibold mb-2">Sidebar - Direct Call Phone</label>
+                            <input type="text" id="bookingDirectPhone" placeholder="+91 98765 43210" class="input-premium w-full px-4 py-3 rounded-lg">
+                        </div>
+                        <div>
+                            <label class="block text-navy font-semibold mb-2">CTA Section - Title</label>
+                            <input type="text" id="bookingCtaTitle" placeholder="Urgent Legal Matter?" class="input-premium w-full px-4 py-3 rounded-lg">
+                        </div>
+                        <div>
+                            <label class="block text-navy font-semibold mb-2">CTA Section - Subtitle</label>
+                            <input type="text" id="bookingCtaSubtitle" placeholder="Call us now for immediate assistance" class="input-premium w-full px-4 py-3 rounded-lg">
+                        </div>
+                        <div class="md:col-span-2">
+                            <label class="block text-navy font-semibold mb-2">CTA Section - Emergency Phone</label>
+                            <input type="text" id="bookingCtaPhone" placeholder="+91 98765 43210" class="input-premium w-full px-4 py-3 rounded-lg">
+                        </div>
+                    </div>
+                    <div class="flex gap-3 mt-6">
+                        <button onclick="saveServicesField('booking', 'direct-title', 'bookingDirectTitle', 'Direct Title')" class="btn-premium px-4 py-2 rounded-lg text-sm">Save Sidebar</button>
+                        <button onclick="saveServicesField('booking', 'direct-phone', 'bookingDirectPhone', 'Direct Phone')" class="btn-premium px-4 py-2 rounded-lg text-sm">Save Phone</button>
+                        <button onclick="saveServicesField('booking', 'cta-title', 'bookingCtaTitle', 'CTA Title')" class="btn-premium px-4 py-2 rounded-lg text-sm">Save CTA Title</button>
+                        <button onclick="saveServicesField('booking', 'cta-subtitle', 'bookingCtaSubtitle', 'CTA Subtitle')" class="btn-premium px-4 py-2 rounded-lg text-sm">Save CTA Subtitle</button>
+                        <button onclick="saveServicesField('booking', 'cta-phone', 'bookingCtaPhone', 'CTA Phone')" class="btn-premium px-4 py-2 rounded-lg text-sm">Save CTA Phone</button>
+                    </div>
+                </div>
+
+                <div class="mt-10">
+                    <div class="flex flex-col md:flex-row md:items-center md:justify-between mb-6">
+                        <div>
+                            <h3 class="font-serif text-2xl font-bold text-navy">👥 Team Members</h3>
+                            <p class="text-gray-600 mt-1">Add, edit, or remove team members</p>
+                        </div>
+                        <button onclick="showTeamForm()" class="mt-4 md:mt-0 btn-gold-premium px-6 py-2 rounded-lg font-semibold inline-flex items-center space-x-2">
+                            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4v16m8-8H4"></path>
+                            </svg>
+                            <span>Add Team Member</span>
+                        </button>
+                    </div>
+
+                    <div id="teamForm" class="hidden glass-card p-6 md:p-8 rounded-2xl mb-6 shadow-xl">
+                        <h4 id="teamFormTitle" class="font-serif text-xl font-bold text-navy mb-6">Add Team Member</h4>
+                        <form id="teamFormElement">
+                            <input type="hidden" id="teamId">
+                            <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mb-4">
+                                <div>
+                                    <label class="block text-navy font-semibold mb-2">Name *</label>
+                                    <input type="text" id="teamName" required class="input-premium w-full px-4 py-3 rounded-lg">
+                                </div>
+                                <div>
+                                    <label class="block text-navy font-semibold mb-2">Position *</label>
+                                    <input type="text" id="teamPosition" required class="input-premium w-full px-4 py-3 rounded-lg">
+                                </div>
+                            </div>
+                            <div class="mb-4">
+                                <label class="block text-navy font-semibold mb-2">Description</label>
+                                <textarea id="teamDescription" rows="2" class="input-premium w-full px-4 py-3 rounded-lg resize-none"></textarea>
+                            </div>
+                            <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mb-4">
+                                <div>
+                                    <label class="block text-navy font-semibold mb-2">Image URL</label>
+                                    <input type="text" id="teamImageUrl" placeholder="https://example.com/image.jpg" class="input-premium w-full px-4 py-3 rounded-lg">
+                                </div>
+                                <div>
+                                    <label class="block text-navy font-semibold mb-2">Or Upload Image</label>
+                                    <input type="file" id="teamImageUpload" accept="image/*" class="input-premium w-full px-4 py-3 rounded-lg">
+                                </div>
+                            </div>
+                            <div class="flex gap-4">
+                                <button type="submit" class="btn-premium px-6 py-2 rounded-lg font-semibold">Save Team Member</button>
+                                <button type="button" onclick="cancelTeamForm()" class="border-2 border-gray-300 text-gray-600 hover:border-navy hover:text-navy px-6 py-2 rounded-lg font-semibold transition-all duration-300">Cancel</button>
+                            </div>
+                        </form>
+                    </div>
+
+                    <div class="glass-card rounded-2xl overflow-hidden shadow-lg">
+                        <table class="w-full">
+                            <thead>
+                                <tr class="bg-navy text-white">
+                                    <th class="text-left px-4 py-3">Image</th>
+                                    <th class="text-left px-4 py-3">Name</th>
+                                    <th class="text-left px-4 py-3">Position</th>
+                                    <th class="text-left px-4 py-3">Description</th>
+                                    <th class="text-center px-4 py-3">Actions</th>
+                                </tr>
+                            </thead>
+                            <tbody id="teamList"></tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Inquiries Tab -->
+            <div id="panel-inquiries" class="tab-panel hidden">
+                <div class="mb-10">
+                    <h2 class="font-serif text-4xl font-bold text-navy">Inquiries</h2>
+                    <p class="text-gray-600 mt-2">View and manage messages from website visitors</p>
+                </div>
+                <div class="flex flex-col sm:flex-row gap-4 mb-6">
+                    <input type="date" id="inquiryDateFilter" class="input-premium px-4 py-2 rounded-lg" placeholder="Filter by date">
+                    <select id="inquirySortOrder" class="input-premium px-4 py-2 rounded-lg">
+                        <option value="newest">Newest First</option>
+                        <option value="oldest">Oldest First</option>
+                    </select>
+                </div>
+                <div class="glass-card rounded-2xl overflow-hidden shadow-lg">
+                    <table class="w-full">
+                        <thead>
+                            <tr class="bg-navy text-white">
+                                <th class="text-left px-6 py-4">Name</th>
+                                <th class="text-left px-6 py-4">Contact</th>
+                                <th class="text-left px-6 py-4">Subject</th>
+                                <th class="text-left px-6 py-4">Message</th>
+                                <th class="text-left px-6 py-4">Date</th>
+                                <th class="text-center px-4 py-4">Actions</th>
+                            </tr>
+                        </thead>
+                        <tbody id="contactsList"></tbody>
+                    </table>
+                </div>
+
+                <!-- Contact Detail Modal -->
+                <div id="contactDetailModal" class="hidden fixed inset-0 bg-black bg-opacity-50 z-50 flex items-center justify-center p-4">
+                    <div class="bg-white rounded-2xl shadow-2xl max-w-lg w-full max-h-[80vh] overflow-y-auto">
+                        <div class="bg-navy text-white px-6 py-4 rounded-t-2xl flex justify-between items-center">
+                            <h3 class="font-serif text-xl font-bold">Message Details</h3>
+                            <button onclick="closeContactDetail()" class="text-white hover:text-gray-200 text-2xl">&times;</button>
+                        </div>
+                        <div class="p-6 space-y-4">
+                            <div class="grid grid-cols-2 gap-4">
+                                <div>
+                                    <label class="text-xs font-semibold text-slate-500 uppercase tracking-wide">Name</label>
+                                    <p id="contact-detail-name" class="text-slate-900 font-medium mt-1">-</p>
+                                </div>
+                                <div>
+                                    <label class="text-xs font-semibold text-slate-500 uppercase tracking-wide">Date</label>
+                                    <p id="contact-detail-date" class="text-slate-700 mt-1">-</p>
+                                </div>
+                                <div>
+                                    <label class="text-xs font-semibold text-slate-500 uppercase tracking-wide">Email</label>
+                                    <p id="contact-detail-email" class="text-slate-900 mt-1">-</p>
+                                </div>
+                                <div>
+                                    <label class="text-xs font-semibold text-slate-500 uppercase tracking-wide">Phone</label>
+                                    <p id="contact-detail-phone" class="text-slate-700 mt-1">-</p>
+                                </div>
+                            </div>
+                            <div>
+                                <label class="text-xs font-semibold text-slate-500 uppercase tracking-wide">Subject</label>
+                                <p id="contact-detail-subject" class="text-slate-900 font-medium mt-1">-</p>
+                            </div>
+                            <div>
+                                <label class="text-xs font-semibold text-slate-500 uppercase tracking-wide">Message</label>
+                                <p id="contact-detail-message" class="text-slate-700 mt-1 whitespace-pre-wrap">-</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Home Page Tab -->
+                <div id="panel-home" class="tab-panel hidden">
+                <div class="mb-10">
+                    <h2 class="font-serif text-4xl font-bold text-navy">Home Page</h2>
+                    <p class="text-gray-600 mt-2">Edit the main landing page content</p>
+                </div>
+
+                <!-- Hero Section -->
+                <div class="glass-card p-8 md:p-10 rounded-2xl mb-8 shadow-xl">
+                    <h3 class="font-serif text-2xl font-bold text-navy mb-6">🏠 Hero Section</h3>
+                    <div class="mb-4">
+                        <label class="block text-navy font-semibold mb-2">Hero Title Line 1</label>
+                        <input type="text" id="homeHeroTitle" placeholder="Clarity. Strategy." class="input-premium w-full px-4 py-3 rounded-lg">
+                    </div>
+                    <div class="mb-4">
+                        <label class="block text-navy font-semibold mb-2">Hero Title Line 2 (Centered)</label>
+                        <input type="text" id="homeHeroTitle2" placeholder="Resolution." class="input-premium w-full px-4 py-3 rounded-lg">
+                    </div>
+                    <div class="mb-4">
+                        <label class="block text-navy font-semibold mb-2">Hero Subtitle</label>
+                        <textarea id="homeHeroSubtitle" rows="2" placeholder="Providing exceptional legal representation with integrity and dedication..." class="input-premium w-full px-4 py-3 rounded-lg resize-none"></textarea>
+                    </div>
+                    <div class="mb-4">
+                        <label class="block text-navy font-semibold mb-2">Background Image URL</label>
+                        <input type="text" id="homeHeroImage" placeholder="https://example.com/hero.jpg" class="input-premium w-full px-4 py-3 rounded-lg">
+                    </div>
+                    <button onclick="saveHomeHero()" class="btn-premium px-6 py-2 rounded-lg font-semibold">Save Hero Section</button>
+                </div>
+
+                <!-- About Snippet -->
+                <div class="glass-card p-8 md:p-10 rounded-2xl mb-8 shadow-xl">
+                    <h3 class="font-serif text-2xl font-bold text-navy mb-6">📖 About Snippet</h3>
+                    <div class="mb-4">
+                        <label class="block text-navy font-semibold mb-2">Who We Are (Brief Description)</label>
+                        <textarea id="homeAboutSnippet" rows="4" placeholder="With over two decades of distinguished experience..." class="input-premium w-full px-4 py-3 rounded-lg resize-none"></textarea>
+                    </div>
+                    <div class="mb-4">
+                        <label class="block text-navy font-semibold mb-2">About Section Image URL</label>
+                        <input type="text" id="homeAboutImage" placeholder="https://example.com/about-img.jpg" class="input-premium w-full px-4 py-3 rounded-lg">
+                    </div>
+                    <div class="mb-6">
+                        <label class="block text-navy font-semibold mb-2">Or Upload About Image</label>
+                        <input type="file" id="homeAboutImageUpload" accept="image/*" class="input-premium w-full px-4 py-3 rounded-lg">
+                    </div>
+                    <button onclick="saveHomeAbout()" class="btn-premium px-6 py-2 rounded-lg font-semibold">Save About Section</button>
+                </div>
+
+                <div class="glass-card p-8 md:p-10 rounded-2xl mb-8 shadow-xl">
+                    <h3 class="font-serif text-2xl font-bold text-navy mb-6">📊 Statistics Section</h3>
+                    <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                        <div>
+                            <label class="block text-navy font-semibold mb-2">Stat 1 Value</label>
+                            <input type="text" id="homeStat1Value" placeholder="25+" class="input-premium w-full px-4 py-3 rounded-lg mb-3">
+                            <label class="block text-navy font-semibold mb-2">Stat 1 Label</label>
+                            <input type="text" id="homeStat1Label" placeholder="Years Practice" class="input-premium w-full px-4 py-3 rounded-lg">
+                        </div>
+                        <div>
+                            <label class="block text-navy font-semibold mb-2">Stat 2 Value</label>
+                            <input type="text" id="homeStat2Value" placeholder="500+" class="input-premium w-full px-4 py-3 rounded-lg mb-3">
+                            <label class="block text-navy font-semibold mb-2">Stat 2 Label</label>
+                            <input type="text" id="homeStat2Label" placeholder="Resolutions" class="input-premium w-full px-4 py-3 rounded-lg">
+                        </div>
+                        <div>
+                            <label class="block text-navy font-semibold mb-2">Stat 3 Value</label>
+                            <input type="text" id="homeStat3Value" placeholder="98%" class="input-premium w-full px-4 py-3 rounded-lg mb-3">
+                            <label class="block text-navy font-semibold mb-2">Stat 3 Label</label>
+                            <input type="text" id="homeStat3Label" placeholder="Success Rate" class="input-premium w-full px-4 py-3 rounded-lg">
+                        </div>
+                    </div>
+                    <button onclick="saveHomeStats()" class="btn-premium px-6 py-2 rounded-lg font-semibold mt-6">Save Statistics</button>
+                </div>
+            </div>
+
+            <!-- Services Tab -->
+            <div id="panel-services" class="tab-panel hidden">
+                <div class="mb-10">
+                    <h2 class="font-serif text-4xl font-bold text-navy">Services</h2>
+                    <p class="text-gray-600 mt-2">Manage services page content</p>
+                </div>
+                
+                <div class="glass-card p-8 md:p-10 rounded-2xl mb-8 shadow-xl">
+                    <h3 class="font-serif text-2xl font-bold text-navy mb-6">🎯 Services Hero Section</h3>
+                    <div class="mb-4">
+                        <label class="block text-navy font-semibold mb-2">Tagline</label>
+                        <div class="flex gap-2">
+                            <input type="text" id="servicesTagline" placeholder="Practice Areas" class="input-premium flex-1 px-4 py-3 rounded-lg">
+                            <button onclick="saveServicesField('services', 'tagline', 'servicesTagline', 'Services Tagline')" class="btn-premium px-4 py-2 rounded-lg text-sm">Save</button>
+                        </div>
+                    </div>
+                    <div class="mb-4">
+                        <label class="block text-navy font-semibold mb-2">Title</label>
+                        <div class="flex gap-2">
+                            <input type="text" id="servicesTitle" placeholder="Our Legal Services" class="input-premium flex-1 px-4 py-3 rounded-lg">
+                            <button onclick="saveServicesField('services', 'title', 'servicesTitle', 'Services Title')" class="btn-premium px-4 py-2 rounded-lg text-sm">Save</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="glass-card p-8 md:p-10 rounded-2xl mb-8 shadow-xl">
+                    <div class="flex justify-between items-center mb-6">
+                        <h3 class="font-serif text-2xl font-bold text-navy">⚖️ All Services</h3>
+                        <button onclick="addServiceCard()" class="btn-gold-premium px-6 py-3 rounded-lg font-semibold">+ Add Service</button>
+                    </div>
+                    <p class="text-gray-600 mb-6">All services share the same format: Image, Tagline, Icon, Title, Description, and up to 4 Key Points. Use <strong>Save All</strong> to save every card at once, or individual Save buttons per field.</p>
+                    <div class="flex gap-3 mb-6">
+                        <button onclick="saveAllServices()" class="btn-gold-premium px-8 py-3 rounded-lg font-semibold">💾 Save All Services</button>
+                    </div>
+                    <div id="allServicesContainer"></div>
+                </div>
+            </div>
+
+            <!-- Contact Page Tab -->
+            <div id="panel-contact-page" class="tab-panel hidden">
+                <div class="mb-10">
+                    <h2 class="font-serif text-4xl font-bold text-navy">Contact Page</h2>
+                    <p class="text-gray-600 mt-2">Edit contact page content</p>
+                </div>
+                
+                <div class="glass-card p-8 md:p-10 rounded-2xl mb-8 shadow-xl">
+                    <h3 class="font-serif text-2xl font-bold text-navy mb-6">📍 Contact Hero Section</h3>
+                    <div class="mb-4">
+                        <label class="block text-navy font-semibold mb-2">Tagline</label>
+                        <div class="flex gap-2">
+                            <input type="text" id="contactTagline" placeholder="Get in Touch" class="input-premium flex-1 px-4 py-3 rounded-lg">
+                            <button onclick="saveServicesField('contact', 'tagline', 'contactTagline', 'Contact Tagline')" class="btn-premium px-4 py-2 rounded-lg text-sm">Save</button>
+                        </div>
+                    </div>
+                    <div class="mb-4">
+                        <label class="block text-navy font-semibold mb-2">Title</label>
+                        <div class="flex gap-2">
+                            <input type="text" id="contactTitle" placeholder="Contact Us" class="input-premium flex-1 px-4 py-3 rounded-lg">
+                            <button onclick="saveServicesField('contact', 'title', 'contactTitle', 'Contact Title')" class="btn-premium px-4 py-2 rounded-lg text-sm">Save</button>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="glass-card p-8 md:p-10 rounded-2xl mb-8 shadow-xl">
+                    <h3 class="font-serif text-2xl font-bold text-navy mb-6">📝 Contact Form Section</h3>
+<div class="mb-4">
+                        <label class="block text-navy font-semibold mb-2">Form Title</label>
+                        <div class="flex gap-2">
+                            <input type="text" id="contactFormTitle" placeholder="Send us a Message" class="input-premium flex-1 px-4 py-3 rounded-lg">
+                            <button onclick="saveServicesField('contact', 'form-title', 'contactFormTitle', 'Form Title')" class="btn-premium px-4 py-2 rounded-lg text-sm self-start">Save</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="glass-card p-8 md:p-10 rounded-2xl mb-8 shadow-xl">
+                    <h3 class="font-serif text-2xl font-bold text-navy mb-6">📞 CTA Section (Contact Page Footer)</h3>
+                    <div class="mb-4">
+                        <label class="block text-navy font-semibold mb-2">CTA Title</label>
+                        <div class="flex gap-2">
+                            <input type="text" id="contactCtaTitle" placeholder="Prefer to Speak Directly?" class="input-premium flex-1 px-4 py-3 rounded-lg">
+                            <button onclick="saveServicesField('contact', 'cta-title', 'contactCtaTitle', 'CTA Title')" class="btn-premium px-4 py-2 rounded-lg text-sm">Save</button>
+                        </div>
+                    </div>
+                    <div class="mb-4">
+                        <label class="block text-navy font-semibold mb-2">CTA Subtitle</label>
+                        <div class="flex gap-2">
+                            <input type="text" id="contactCtaSubtitle" placeholder="Call us now to speak with our legal team" class="input-premium flex-1 px-4 py-3 rounded-lg">
+                            <button onclick="saveServicesField('contact', 'cta-subtitle', 'contactCtaSubtitle', 'CTA Subtitle')" class="btn-premium px-4 py-2 rounded-lg text-sm">Save</button>
+                        </div>
+                    </div>
+                    <div class="mb-4">
+                        <label class="block text-navy font-semibold mb-2">CTA Phone Number</label>
+                        <div class="flex gap-2">
+                            <input type="text" id="contactCtaPhone" placeholder="+91 98765 43210" class="input-premium flex-1 px-4 py-3 rounded-lg">
+                            <button onclick="saveServicesField('contact', 'cta-phone', 'contactCtaPhone', 'CTA Phone')" class="btn-premium px-4 py-2 rounded-lg text-sm">Save</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Map Section -->
+                <div class="glass-card p-8 md:p-10 rounded-2xl mb-8 shadow-xl">
+                    <h3 class="font-serif text-2xl font-bold text-navy mb-6">🗺️ Map Section</h3>
+                    <div class="mb-4">
+                        <label class="block text-navy font-semibold mb-2">Map Title</label>
+                        <div class="flex gap-2">
+                            <input type="text" id="contactMapTitle" placeholder="Interactive Map Integration Available" class="input-premium flex-1 px-4 py-3 rounded-lg">
+                            <button onclick="saveServicesField('contact', 'map-title', 'contactMapTitle', 'Map Title')" class="btn-premium px-4 py-2 rounded-lg text-sm">Save</button>
+                        </div>
+                    </div>
+                    <div class="mb-4">
+                        <label class="block text-navy font-semibold mb-2">Map Address</label>
+                        <div class="flex gap-2">
+                            <input type="text" id="contactMapAddress" placeholder="123 Legal Street, Law District, New Delhi" class="input-premium flex-1 px-4 py-3 rounded-lg">
+                            <button onclick="saveServicesField('contact', 'map-address', 'contactMapAddress', 'Map Address')" class="btn-premium px-4 py-2 rounded-lg text-sm">Save</button>
+                        </div>
+                    </div>
+                    <div class="mb-4">
+                        <label class="block text-navy font-semibold mb-2">Map Link (e.g. Google Maps URL)</label>
+                        <div class="flex gap-2">
+                            <input type="url" id="contactMapLink" placeholder="https://maps.google.com/..." class="input-premium flex-1 px-4 py-3 rounded-lg">
+                            <button onclick="saveServicesField('contact', 'map-link', 'contactMapLink', 'Map Link')" class="btn-premium px-4 py-2 rounded-lg text-sm">Save</button>
+                        </div>
+                    </div>
+                    <div class="mb-4">
+                        <label class="block text-navy font-semibold mb-2">Or Upload Map Image</label>
+                        <input type="file" id="contactMapImageUpload" accept="image/*" class="input-premium w-full px-4 py-3 rounded-lg mb-2">
+                        <button onclick="uploadMapImage()" class="btn-premium px-4 py-2 rounded-lg text-sm">Upload Image</button>
+                        <p class="text-xs text-gray-500 mt-1">Leave blank to use default blue background</p>
+                    </div>
+                </div>
+
+                <!-- Office Details (Contact Page Cards) -->
+                <div class="glass-card p-8 md:p-10 rounded-2xl mb-8 shadow-xl">
+                    <h3 class="font-serif text-2xl font-bold text-navy mb-6">🏢 Office Details (Contact Page)</h3>
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-4">
+                        <div>
+                            <label class="block text-navy font-semibold mb-2">Office Name</label>
+                            <input type="text" id="contactOfficeName" placeholder="Main Office - New Delhi" class="input-premium w-full px-4 py-3 rounded-lg">
+                        </div>
+                        <div>
+                            <label class="block text-navy font-semibold mb-2">Address Line 1</label>
+                            <input type="text" id="contactOfficeAddress1" placeholder="123 Legal Street, Law District" class="input-premium w-full px-4 py-3 rounded-lg">
+                        </div>
+                        <div>
+                            <label class="block text-navy font-semibold mb-2">Address Line 2</label>
+                            <input type="text" id="contactOfficeAddress2" placeholder="New Delhi, India - 110001" class="input-premium w-full px-4 py-3 rounded-lg">
+                        </div>
+                        <div>
+                            <label class="block text-navy font-semibold mb-2">Main Phone</label>
+                            <input type="text" id="contactPhoneMain" placeholder="+91 98765 43210" class="input-premium w-full px-4 py-3 rounded-lg">
+                        </div>
+                        <div>
+                            <label class="block text-navy font-semibold mb-2">Alternate Phone</label>
+                            <input type="text" id="contactPhoneAlt" placeholder="+91 87654 32109" class="input-premium w-full px-4 py-3 rounded-lg">
+                        </div>
+                        <div>
+                            <label class="block text-navy font-semibold mb-2">Emergency Phone</label>
+                            <input type="text" id="contactPhoneEmergency" placeholder="+91 76543 21098" class="input-premium w-full px-4 py-3 rounded-lg">
+                        </div>
+                        <div>
+                            <label class="block text-navy font-semibold mb-2">Primary Email</label>
+                            <input type="email" id="contactEmailPrimary" placeholder="contact@dejurelawoffice.com" class="input-premium w-full px-4 py-3 rounded-lg">
+                        </div>
+                        <div>
+                            <label class="block text-navy font-semibold mb-2">Secondary Email</label>
+                            <input type="email" id="contactEmailSecondary" placeholder="info@advocatelaw.com" class="input-premium w-full px-4 py-3 rounded-lg">
+                        </div>
+                        <div>
+                            <label class="block text-navy font-semibold mb-2">Weekday Hours</label>
+                            <input type="text" id="contactHoursWeekday" placeholder="9:00 AM - 6:00 PM" class="input-premium w-full px-4 py-3 rounded-lg">
+                        </div>
+                        <div>
+                            <label class="block text-navy font-semibold mb-2">Saturday Hours</label>
+                            <input type="text" id="contactHoursSaturday" placeholder="10:00 AM - 2:00 PM" class="input-premium w-full px-4 py-3 rounded-lg">
+                        </div>
+                        <div>
+                            <label class="block text-navy font-semibold mb-2">Sunday Status</label>
+                            <input type="text" id="contactHoursSunday" placeholder="Closed" class="input-premium w-full px-4 py-3 rounded-lg">
+                        </div>
+                    </div>
+                    <button onclick="saveContactOfficeDetails()" class="btn-premium px-6 py-3 rounded-lg font-semibold">Save Office Details</button>
+                </div>
+            </div>
+
+            <!-- Announcements Tab -->
+            <div id="panel-announcements" class="tab-panel hidden">
+                <div class="flex flex-col md:flex-row md:items-center md:justify-between mb-10">
+                    <div>
+                        <h2 class="font-serif text-4xl font-bold text-navy">Announcements</h2>
+                        <p class="text-gray-600 mt-2">Post important notes, holidays, emergency updates</p>
+                    </div>
+                    <button onclick="showAnnouncementForm()" class="mt-4 md:mt-0 btn-gold-premium px-8 py-3 rounded-lg font-semibold inline-flex items-center space-x-2">
+                        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4v16m8-8H4"></path>
+                        </svg>
+                        <span>New Announcement</span>
+                    </button>
+                </div>
+
+<div id="announcementForm" class="hidden glass-card p-8 md:p-10 rounded-2xl mb-10 shadow-xl">
+                    <h3 id="announcementFormTitle" class="font-serif text-3xl font-bold text-navy mb-8">Create Announcement</h3>
+                    <form id="announcementFormElement">
+                        <input type="hidden" id="announcementId">
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
+                            <div>
+                                <label class="block text-navy font-semibold mb-2">Title</label>
+                                <input type="text" id="announcementTitle" required
+                                    class="input-premium w-full px-4 py-3 rounded-lg">
+                            </div>
+                            <div>
+                                <label class="block text-navy font-semibold mb-2">Type</label>
+                                <select id="announcementType" required
+                                    class="input-premium w-full px-4 py-3 rounded-lg">
+                                    <option value="">Select Type</option>
+                                    <option value="holiday">Holiday</option>
+                                    <option value="notice">Notice</option>
+                                    <option value="update">Update</option>
+                                    <option value="emergency">Emergency</option>
+                                    <option value="other">Other</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="mb-8">
+                            <label class="block text-navy font-semibold mb-2">Content</label>
+                            <textarea id="announcementContent" rows="4" required
+                                class="input-premium w-full px-4 py-3 rounded-lg resize-none"></textarea>
+                        </div>
+                        <div class="mb-8">
+                            <label class="flex items-center space-x-3">
+                                <input type="checkbox" id="announcementActive" checked class="w-5 h-5 text-gold">
+                                <span class="text-navy font-semibold">Active (show on website)</span>
+                            </label>
+                        </div>
+                        <div class="flex gap-4">
+                            <button type="submit"
+                                class="btn-premium px-8 py-3 rounded-lg font-semibold">
+                                <span>Save Announcement</span>
+                            </button>
+                            <button type="button" onclick="cancelAnnouncementForm()"
+                                class="border-2 border-gray-300 text-gray-600 hover:border-navy hover:text-navy px-8 py-3 rounded-lg font-semibold transition-all duration-300">
+                                Cancel
+                            </button>
+                        </div>
+                    </form>
+                </div>
+
+                <div class="glass-card rounded-2xl overflow-hidden shadow-lg">
+                    <table class="w-full">
+                        <thead>
+                            <tr class="bg-navy text-white">
+                                <th class="text-left px-6 py-4">Title</th>
+                                <th class="text-left px-6 py-4">Type</th>
+                                <th class="text-left px-6 py-4">Content</th>
+                                <th class="text-center px-6 py-4">Status</th>
+                                <th class="text-center px-6 py-4">Actions</th>
+                            </tr>
+                        </thead>
+                        <tbody id="announcementList"></tbody>
+                    </table>
+                </div>
+            </div>
+
+            <!-- Calculator Tab -->
+            <div id="panel-calculator" class="tab-panel hidden">
+                <div class="mb-10">
+                    <h2 class="font-serif text-4xl font-bold text-navy">Court Fee Calculator Page</h2>
+                    <p class="text-gray-600 mt-2">Edit the sidebar content on the Court Fee Calculator page</p>
+                </div>
+                <div class="glass-card p-8 md:p-10 rounded-2xl shadow-xl">
+                    <h3 class="font-serif text-2xl font-bold text-navy mb-6">📋 Sidebar Content</h3>
+                    <div class="grid grid-cols-1 gap-6 mb-8">
+                        <div>
+                            <label class="block text-navy font-semibold mb-2">Title</label>
+                            <div class="flex gap-2">
+                                <input type="text" id="calcSidebarTitle" placeholder="Need Legal Assistance?" class="input-premium flex-1 px-4 py-3 rounded-lg">
+                                <button type="button" onclick="saveCalcField('title', 'calcSidebarTitle', 'Title')" class="btn-premium px-4 py-2 rounded-lg text-sm">Save</button>
+                            </div>
+                        </div>
+                        <div>
+                            <label class="block text-navy font-semibold mb-2">Description</label>
+                            <div class="flex gap-2">
+                                <textarea id="calcSidebarDesc" rows="3" placeholder="Our experienced legal team can help you..." class="input-premium flex-1 px-4 py-3 rounded-lg resize-none"></textarea>
+                                <button type="button" onclick="saveCalcField('desc', 'calcSidebarDesc', 'Description')" class="btn-premium px-4 py-2 rounded-lg text-sm self-start">Save</button>
+                            </div>
+                        </div>
+                        <div>
+                            <label class="block text-navy font-semibold mb-2">Button Text</label>
+                            <div class="flex gap-2">
+                                <input type="text" id="calcSidebarBtn" placeholder="Book Consultation" class="input-premium flex-1 px-4 py-3 rounded-lg">
+                                <button type="button" onclick="saveCalcField('btn', 'calcSidebarBtn', 'Button Text')" class="btn-premium px-4 py-2 rounded-lg text-sm">Save</button>
+                            </div>
+                        </div>
+                        <div>
+                            <label class="block text-navy font-semibold mb-2">Phone Number</label>
+                            <div class="flex gap-2">
+                                <input type="text" id="calcSidebarPhone" placeholder="+91 98765 43210" class="input-premium flex-1 px-4 py-3 rounded-lg">
+                                <button type="button" onclick="saveCalcField('phone', 'calcSidebarPhone', 'Phone Number')" class="btn-premium px-4 py-2 rounded-lg text-sm">Save</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Footer Settings Tab (Premium Styling) -->
+            <div id="panel-footer" class="tab-panel hidden">
+                <div class="mb-10">
+                    <h2 class="font-serif text-4xl font-bold text-navy">Footer Settings</h2>
+                    <p class="text-gray-600 mt-2">Edit footer content, contact details, and links</p>
+                </div>
+                <div class="glass-card p-8 md:p-10 rounded-2xl shadow-xl">
+                    <form id="footerForm">
+                        <h3 class="font-serif text-2xl font-bold text-navy mb-6">Contact Information</h3>
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-8">
+                            <div>
+                                <label class="block text-navy font-semibold mb-2">Address</label>
+                                <div class="flex gap-2">
+                                    <input type="text" id="footerAddress" class="input-premium flex-1 px-4 py-3 rounded-lg">
+                                    <button type="button" onclick="saveFooterAddress()" class="btn-premium px-4 py-2 rounded-lg text-sm">Save</button>
+                                </div>
+                            </div>
+                            <div>
+                                <label class="block text-navy font-semibold mb-2">Phone</label>
+                                <div class="flex gap-2">
+                                    <input type="text" id="footerPhone" class="input-premium flex-1 px-4 py-3 rounded-lg">
+                                    <button type="button" onclick="saveFooterPhone()" class="btn-premium px-4 py-2 rounded-lg text-sm">Save</button>
+                                </div>
+                            </div>
+                            <div>
+                                <label class="block text-navy font-semibold mb-2">Email</label>
+                                <div class="flex gap-2">
+                                    <input type="email" id="footerEmail" class="input-premium flex-1 px-4 py-3 rounded-lg">
+                                    <button type="button" onclick="saveFooterEmail()" class="btn-premium px-4 py-2 rounded-lg text-sm">Save</button>
+                                </div>
+                            </div>
+                            <div>
+                                <label class="block text-navy font-semibold mb-2">Working Hours</label>
+                                <div class="flex gap-2">
+                                    <input type="text" id="footerHours" placeholder="Mon-Fri: 9-6, Sat: 10-2" class="input-premium flex-1 px-4 py-3 rounded-lg">
+                                    <button type="button" onclick="saveFooterHours()" class="btn-premium px-4 py-2 rounded-lg text-sm">Save</button>
+                                </div>
+                            </div>
+                        </div>
+                        <h3 class="font-serif text-2xl font-bold text-navy mb-6">Footer Description</h3>
+                        <div class="mb-8">
+                            <label class="block text-navy font-semibold mb-2">Description</label>
+                            <div class="flex gap-2">
+                                <textarea id="footerDescription" rows="3" placeholder="Premier legal representation marked by integrity..." class="input-premium flex-1 px-4 py-3 rounded-lg resize-none"></textarea>
+                                <button type="button" onclick="saveFooterDescription()" class="btn-premium px-4 py-2 rounded-lg text-sm self-start">Save</button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+
+            <!-- Blogs Tab -->
+            <div id="panel-blogs" class="tab-panel hidden">
+                <div class="flex flex-col md:flex-row md:items-center md:justify-between mb-10">
+                    <div>
+                        <h2 class="font-serif text-4xl font-bold text-navy">Blog Management</h2>
+                        <p class="text-gray-600 mt-2">Create, edit, and manage your blog posts</p>
+                    </div>
+                    <button onclick="showCreateForm()" class="mt-4 md:mt-0 btn-gold-premium px-8 py-3 rounded-lg font-semibold inline-flex items-center space-x-2">
+                        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4v16m8-8H4"></path>
+                        </svg>
+                        <span>New Blog Post</span>
+                    </button>
+                </div>
+
+                <div id="blogForm" class="hidden glass-card p-8 md:p-10 rounded-2xl mb-10 shadow-xl">
+                    <h3 id="formTitle" class="font-serif text-3xl font-bold text-navy mb-8">Create New Blog Post</h3>
+                    <form id="blogFormElement">
+                        <input type="hidden" id="blogId">
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
+                            <div>
+                                <label class="block text-navy font-semibold mb-2">Blog Title *</label>
+                                <input type="text" id="blogTitle" required
+                                    class="input-premium w-full px-4 py-3 rounded-lg">
+                            </div>
+                            <div>
+                                <label class="block text-navy font-semibold mb-2">Author</label>
+                                <input type="text" id="blogAuthor" value="Admin"
+                                    class="input-premium w-full px-4 py-3 rounded-lg">
+                            </div>
+                        </div>
+                        <div class="mb-6">
+                            <label class="block text-navy font-semibold mb-2">Blog Content *</label>
+                            <textarea id="blogContent" rows="10" required
+                                class="input-premium w-full px-4 py-3 rounded-lg resize-none"></textarea>
+                        </div>
+                        <div class="mb-8">
+                            <label class="block text-navy font-semibold mb-2">Featured Image</label>
+                            <input type="file" id="blogImage" accept="image/*"
+                                class="input-premium w-full px-4 py-3 rounded-lg">
+                            <img id="imagePreview" class="hidden mt-4 rounded-lg max-h-48 object-cover">
+                        </div>
+                        <div class="flex gap-4">
+                            <button type="submit"
+                                class="btn-premium px-8 py-3 rounded-lg font-semibold">
+                                <span>Save Blog Post</span>
+                            </button>
+                            <button type="button" onclick="cancelForm()"
+                                class="border-2 border-gray-300 text-gray-600 hover:border-navy hover:text-navy px-8 py-3 rounded-lg font-semibold transition-all duration-300">
+                                Cancel
+                            </button>
+                        </div>
+                    </form>
+                </div>
+
+                <div class="glass-card rounded-2xl overflow-hidden shadow-lg">
+                    <table class="w-full">
+                        <thead>
+                            <tr class="bg-navy text-white">
+                                <th class="text-left px-6 py-4">Title</th>
+                                <th class="text-left px-6 py-4">Author</th>
+                                <th class="text-left px-6 py-4">Date</th>
+                                <th class="text-center px-6 py-4">Actions</th>
+                            </tr>
+                        </thead>
+                        <tbody id="blogsList"></tbody>
+                    </table>
+                </div>
+            </div>
+
+            <!-- Bookings Tab -->
+            <div id="panel-bookings" class="tab-panel hidden">
+                <div class="mb-10">
+                    <h2 class="font-serif text-4xl font-bold text-navy">Bookings Management</h2>
+                    <p class="text-gray-600 mt-2">Manage appointment requests from clients</p>
+                </div>
+                <div class="flex flex-col sm:flex-row gap-4 mb-6">
+                    <input type="date" id="bookingDateFilter" class="input-premium px-4 py-2 rounded-lg" placeholder="Filter by date">
+                    <select id="bookingSortOrder" class="input-premium px-4 py-2 rounded-lg">
+                        <option value="newest">Newest First</option>
+                        <option value="oldest">Oldest First</option>
+                        <option value="date-asc">Appointment: Soonest First</option>
+                        <option value="date-desc">Appointment: Latest First</option>
+                    </select>
+                    <select id="bookingStatusFilter" class="input-premium px-4 py-2 rounded-lg">
+                        <option value="">All Statuses</option>
+                        <option value="pending">Pending</option>
+                        <option value="confirmed">Confirmed</option>
+                        <option value="completed">Completed</option>
+                        <option value="cancelled">Cancelled</option>
+                    </select>
+                </div>
+                <div class="glass-card rounded-2xl overflow-hidden shadow-lg">
+                    <table class="w-full">
+                        <thead>
+                            <tr class="bg-navy text-white">
+                                <th class="text-left px-4 py-4">Client</th>
+                                <th class="text-left px-4 py-4">Service</th>
+                                <th class="text-left px-4 py-4">Booked For</th>
+                                <th class="text-left px-4 py-4">Booked On</th>
+                                <th class="text-center px-4 py-4">Status</th>
+                                <th class="text-center px-4 py-4">Actions</th>
+                            </tr>
+                        </thead>
+                        <tbody id="bookingsList"></tbody>
+                    </table>
+                </div>
+
+                <!-- Booking Detail Modal -->
+                <div id="bookingDetailModal" class="hidden fixed inset-0 bg-black bg-opacity-50 z-50 flex items-center justify-center p-4">
+                    <div class="bg-white rounded-2xl shadow-2xl max-w-lg w-full max-h-[85vh] overflow-y-auto">
+                        <div id="booking-modal-header" class="px-6 py-4 rounded-t-2xl flex justify-between items-center">
+                            <h3 class="font-serif text-xl font-bold text-white">Booking Details</h3>
+                            <button onclick="closeBookingDetail()" class="text-white hover:text-gray-200 text-2xl">&times;</button>
+                        </div>
+                        <div class="p-6 space-y-4">
+                            <div class="grid grid-cols-2 gap-4">
+                                <div>
+                                    <label class="text-xs font-semibold text-slate-500 uppercase tracking-wide">Name</label>
+                                    <p id="booking-detail-name" class="text-slate-900 font-medium mt-1">-</p>
+                                </div>
+                                <div>
+                                    <label class="text-xs font-semibold text-slate-500 uppercase tracking-wide">Booked On</label>
+                                    <p id="booking-detail-booked-on" class="text-slate-700 mt-1 text-sm">-</p>
+                                </div>
+                                <div>
+                                    <label class="text-xs font-semibold text-slate-500 uppercase tracking-wide">Status</label>
+                                    <p id="booking-detail-status" class="mt-1 font-semibold">-</p>
+                                </div>
+                                <div>
+                                    <label class="text-xs font-semibold text-slate-500 uppercase tracking-wide">Email</label>
+                                    <p id="booking-detail-email" class="text-slate-900 mt-1">-</p>
+                                </div>
+                                <div>
+                                    <label class="text-xs font-semibold text-slate-500 uppercase tracking-wide">Phone</label>
+                                    <p id="booking-detail-phone" class="text-slate-700 mt-1">-</p>
+                                </div>
+                                <div>
+                                    <label class="text-xs font-semibold text-slate-500 uppercase tracking-wide">Service</label>
+                                    <p id="booking-detail-service" class="text-slate-900 font-medium mt-1">-</p>
+                                </div>
+                                <div>
+                                    <label class="text-xs font-semibold text-slate-500 uppercase tracking-wide">Date & Time</label>
+                                    <p id="booking-detail-datetime" class="text-slate-700 mt-1">-</p>
+                                </div>
+                            </div>
+                            <div>
+                                <label class="text-xs font-semibold text-slate-500 uppercase tracking-wide">Case Details / Notes</label>
+                                <p id="booking-detail-message" class="text-slate-700 mt-1 whitespace-pre-wrap">-</p>
+                            </div>
+                            <div class="flex gap-3 pt-2">
+                                <select id="booking-status-select" class="flex-1 px-3 py-2 border-2 rounded-lg focus:outline-none focus:border-navy">
+                                    <option value="pending">Pending</option>
+                                    <option value="confirmed">Confirmed</option>
+                                    <option value="completed">Completed</option>
+                                    <option value="cancelled">Cancelled</option>
+                                </select>
+                                <button onclick="saveBookingStatusFromModal()" class="btn-premium px-6 py-2 rounded-lg text-sm">Update Status</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Settings Tab -->
+            <div id="panel-settings" class="tab-panel hidden">
+                <div class="mb-10">
+                    <h2 class="font-serif text-4xl font-bold text-navy">Settings</h2>
+                    <p class="text-gray-600 mt-2">Manage admin account credentials</p>
+                </div>
+
+                <div class="glass-card p-8 md:p-10 rounded-2xl mb-8 shadow-xl">
+                    <h3 class="font-serif text-2xl font-bold text-navy mb-6">🔑 Change Login Credentials</h3>
+                    <p class="text-gray-600 mb-6">Update your admin panel username and password. You will be logged out after saving.</p>
+                    <div class="mb-4">
+                        <label class="block text-navy font-semibold mb-2">New Username</label>
+                        <input type="text" id="settingsUsername" class="input-premium w-full px-4 py-3 rounded-lg">
+                    </div>
+                    <div class="mb-4">
+                        <label class="block text-navy font-semibold mb-2">New Password (min 6 characters)</label>
+                        <input type="password" id="settingsPassword" class="input-premium w-full px-4 py-3 rounded-lg">
+                    </div>
+                    <button onclick="saveCredentials()" class="btn-premium px-8 py-3 rounded-lg font-semibold">Save Credentials</button>
+                    <div id="settingsMessage" class="mt-4"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Undo History Panel -->
+    <div id="undoPanel" class="fixed bottom-4 left-4 z-50 hidden">
+        <div class="bg-white rounded-2xl shadow-2xl border border-gray-200 w-96 max-h-[70vh] flex flex-col">
+            <div class="flex items-center justify-between px-5 py-4 border-b border-gray-100">
+                <h3 class="font-bold text-navy text-lg">↩ Revision History</h3>
+                <div class="flex gap-2">
+                    <button onclick="refreshUndoPanel()" class="text-gray-400 hover:text-navy text-sm font-medium" title="Refresh">↻</button>
+                    <button onclick="toggleUndoPanel()" class="text-gray-400 hover:text-red-500 text-xl leading-none">&times;</button>
+                </div>
+            </div>
+            <div id="undoList" class="overflow-y-auto flex-1 p-3">
+                <div class="text-center text-gray-400 py-8">Loading...</div>
+            </div>
+        </div>
+    </div>
+    <button id="undoToggleBtn" onclick="toggleUndoPanel()" class="fixed bottom-4 left-4 z-40 btn-premium w-14 h-14 rounded-full shadow-2xl flex items-center justify-center text-2xl hover:scale-105 transition-transform" title="Undo History">
+        ↩
+    </button>
+
+    <script src="js/api.js"></script>
+    <script src="js/admin.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            showTab('home');
+        });
+    </script>
+</body>
+</html>

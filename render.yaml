@@ -1,0 +1,38 @@
+services:
+  - type: web
+    name: dejure-law-office
+    env: node
+    region: singapore
+    plan: free
+    buildCommand: npm install
+    startCommand: bash start.sh
+    healthCheckPath: /health
+    envVars:
+      - key: NODE_ENV
+        value: production
+      - key: PORT
+        value: "3000"
+      - key: JWT_SECRET
+        generateValue: true
+      - key: DATABASE_URL
+        fromDatabase:
+          name: dejure-db
+          property: connectionString
+      - key: FRONTEND_URL
+        value: https://dejurelawoffice.onrender.com
+      - key: SMTP_HOST
+        value: smtp.gmail.com
+      - key: SMTP_PORT
+        value: "587"
+      - key: SMTP_SECURE
+        value: "false"
+      - key: SMTP_USER
+        sync: false
+      - key: SMTP_PASS
+        sync: false
+      - key: FROM_EMAIL
+        value: "Dejure Law Office <noreply@dejurelawoffice.com>"
+
+databases:
+  - name: dejure-db
+    plan: free

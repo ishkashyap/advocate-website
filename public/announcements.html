@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Announcements | Dejure Law Office</title>
+    <link rel="icon" type="image/png" href="images/logo.png">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="css/style.css">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'navy': '#1e3a5f',
+                        'navy-light': '#2d4a7a',
+                        'gold': '#D4AF37',
+                        'gold-light': '#F0D060',
+                    },
+                    fontFamily: {
+                        'serif': ['Playfair Display', 'serif'],
+                        'sans': ['Inter', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+
+    <meta name="description" content="Dejure Law Office offers premier legal representation in Civil Litigation, Corporate Law, and Family Law. Schedule a consultation today.">
+    <meta name="keywords" content="Lawyer, Advocate, Legal Services, Corporate Law, Family Law, Civil Litigation">
+    <meta property="og:title" content="Announcements | Dejure Law Office">
+    <meta property="og:description" content="Premier legal representation marked by integrity and strategic excellence.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://dejurelawoffice.com">
+    <meta name="twitter:card" content="summary_large_image">
+    
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "LegalService",
+      "name": "Dejure Law Office",
+      "image": "https://dejurelawoffice.com/images/logo.png",
+      "url": "https://dejurelawoffice.com",
+      "telephone": "+91 98765 43210",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "123 Legal Street",
+        "addressLocality": "New Delhi",
+        "postalCode": "110001",
+        "addressCountry": "IN"
+      }
+    }
+    </script>
+
+</head>
+<body class="bg-white font-sans text-gray-800">
+    <!-- Navigation -->
+    <nav class="sticky top-0 z-50 nav-luxury">
+        <div class="container mx-auto px-6 py-4">
+            <div class="flex items-center justify-between">
+                <div class="flex items-center space-x-3">
+                    <img src="images/logo.png" alt="Dejure Law Office" class="w-10 h-10 rounded-lg object-cover">
+                </div>
+                <div class="hidden md:flex items-center space-x-8">
+                    <a href="index.html" class="text-white hover:text-gold-light transition-colors duration-300 font-medium">Home</a>
+                    <a href="about.html" class="text-white hover:text-gold-light transition-colors duration-300 font-medium">About</a>
+                    <a href="services.html" class="text-white hover:text-gold-light transition-colors duration-300 font-medium">Services</a>
+                    <a href="court-fee-calculator.html" class="text-white hover:text-gold-light transition-colors duration-300 font-medium">Court Fee Calculator</a>
+                    <a href="blog.html" class="text-white hover:text-gold-light transition-colors duration-300 font-medium">Blog</a>
+                    <a href="contact.html" class="text-white hover:text-gold-light transition-colors duration-300 font-medium">Contact</a>
+                    <a href="announcements.html" class="text-gold-light font-medium">Announcements</a>
+                    <a href="booking.html" class="bg-gold hover:bg-gold-light text-navy px-6 py-2.5 rounded-md font-semibold transition-all duration-300">
+                        Book Consultation
+                    </a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Page Header -->
+    <section class="pt-32 pb-20 relative" style="background: linear-gradient(135deg, #1e3a5f 0%, #0f2440 100%);">
+        <div class="absolute inset-0 opacity-10">
+            <img src="https://images.unsplash.com/photo-1589829545856-d10d557cf95f?w=1200" alt="" class="w-full h-full object-cover">
+        </div>
+        <div class="container mx-auto px-6 relative z-10 text-center">
+            <span class="text-gold-light text-sm tracking-[0.3em] uppercase font-semibold">Updates & Notices</span>
+            <h1 class="font-serif text-5xl md:text-6xl font-bold text-white mt-4 mb-6">Announcements</h1>
+            <div class="section-divider"></div>
+            <p class="text-xl text-gray-300 max-w-3xl mx-auto mt-8">
+                Important updates, holidays, and notices from Dejure Law Office
+            </p>
+        </div>
+    </section>
+
+    <!-- Announcements Section -->
+    <section class="py-24 bg-white">
+        <div class="container mx-auto px-6 max-w-4xl">
+            <div id="announcementsList"></div>
+            <div id="noAnnouncements" class="hidden text-center py-16">
+                <div class="text-6xl mb-4">📢</div>
+                <p class="text-gray-500 text-lg">No active announcements at this time.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="py-24" style="background: linear-gradient(135deg, #1e3a5f 0%, #0f2440 100%);">
+        <div class="container mx-auto px-6 text-center">
+            <h2 class="font-serif text-4xl md:text-5xl font-bold text-white mb-6">Need Legal Assistance?</h2>
+            <p class="text-xl text-gray-300 mb-10 max-w-2xl mx-auto">Our team is ready to help you with all your legal needs.</p>
+            <a href="booking.html" class="btn-gold inline-block px-10 py-5 rounded-md font-semibold text-lg">Book Consultation</a>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-white border-t border-slate-200 pt-20 pb-10">
+        <div class="container mx-auto px-6 max-w-6xl">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-12 mb-16">
+                <div class="col-span-1 md:col-span-2">
+                    <div class="flex items-center space-x-3 mb-6">
+                        <img src="images/logo.png" alt="Dejure Law Office" class="h-10 w-auto object-contain">
+                    </div>
+                    <p class="text-slate-500 leading-relaxed">Your trusted legal partner providing exceptional services with integrity.</p>
+                </div>
+                <div>
+                    <h4 class="text-xs font-semibold uppercase tracking-widest text-slate-900 mb-6">Contact</h4>
+                    <ul class="space-y-3">
+                        <li id="content-footer-address">📍 New Delhi, India</li>
+                        <li id="content-footer-phone">📞 +91 98765 43210</li>
+                        <li id="content-footer-email">✉️ <a href="mailto:contact@dejurelawoffice.com" class="hover:text-slate-900 transition-colors">contact@dejurelawoffice.com</a></li>
+                        <li id="content-footer-hours">Mon-Fri: 9:00 AM - 6:00 PM</li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="text-xs font-semibold uppercase tracking-widest text-slate-900 mb-6">Menu</h4>
+                    <ul class="space-y-4 text-slate-500 font-light">
+                        <li><a href="about.html" class="hover:text-slate-900 transition-colors">The Firm</a></li>
+                        <li><a href="services.html" class="hover:text-slate-900 transition-colors">Practice Areas</a></li>
+                        <li><a href="announcements.html" class="hover:text-slate-900 transition-colors">Announcements</a></li>
+                        <li><a href="booking.html" class="hover:text-slate-900 transition-colors">Book Now</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="border-t border-navy-light pt-8 text-center">
+                <p class="text-gray-400">&copy; 2026 Dejure Law Office. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/api.js"></script>
+    <script src="js/main.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            loadAnnouncements();
+        });
+
+        function escapeHtml(str) {
+            const div = document.createElement('div');
+            div.appendChild(document.createTextNode(str));
+            return div.innerHTML;
+        }
+
+        function loadAnnouncements() {
+            fetch(window.location.origin + '/api/announcements')
+                .then(res => res.json())
+                .then(announcements => {
+                    if (announcements.length === 0) {
+                        document.getElementById('noAnnouncements').classList.remove('hidden');
+                        return;
+                    }
+
+                    document.getElementById('announcementsList').innerHTML = announcements.map(ann => `
+                        <div class="mb-8 card-luxury p-8 md:p-10 rounded-2xl animate-fadeInUp">
+                            <div class="flex items-center space-x-4 mb-6">
+                                <span class="inline-block px-4 py-2 rounded-full text-sm font-bold ${getAnnouncementBadge(escapeHtml(ann.type))}">
+                                    ${escapeHtml(ann.type.toUpperCase())}
+                                </span>
+                                <span class="text-gray-500 text-sm">${new Date(ann.created_at).toLocaleDateString()}</span>
+                            </div>
+                            <h2 class="font-serif text-3xl font-bold text-navy mb-4">${escapeHtml(ann.title)}</h2>
+                            <div class="text-gray-600 leading-relaxed text-lg">
+                                ${ann.content.split('\n').map(p => `<p class="mb-4">${escapeHtml(p)}</p>`).join('')}
+                            </div>
+                        </div>
+                    `).join('');
+                })
+                .catch(err => {
+                    console.error('Error loading announcements:', err);
+                    document.getElementById('announcementsList').innerHTML = 
+                        '<p class="text-center text-gray-500">Error loading announcements.</p>';
+                });
+        }
+
+        function getAnnouncementBadge(type) {
+            const badges = {
+                'holiday': 'bg-blue-100 text-blue-800',
+                'emergency': 'bg-red-100 text-red-800',
+                'notice': 'bg-yellow-100 text-yellow-800',
+                'court': 'bg-purple-100 text-purple-800'
+            };
+            return badges[type] || 'bg-gray-100 text-gray-800';
+        }
+    </script>
+</body>
+</html>
